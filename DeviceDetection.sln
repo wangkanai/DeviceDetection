@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF1D00F8-4E06-47EA-9A51-6B8CF000D208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D501143-0502-4598-AA4A-D1397164AA30}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{EB381681-9F43-4EBD-AA8B-6E591E169110}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sandbox", "sample\Sandbox\Sandbox.xproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.DeviceDetection", "src\Wangkanai.AspNetCore.DeviceDetection\Wangkanai.AspNetCore.DeviceDetection.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.DeviceDetection.Core", "src\Wangkanai.AspNetCore.DeviceDetection.Core\Wangkanai.AspNetCore.DeviceDetection.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218} = {EB381681-9F43-4EBD-AA8B-6E591E169110}
+		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
+		{079BF429-0174-4422-8CD7-62D0987E57C3} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
+	EndGlobalSection
+EndGlobal
