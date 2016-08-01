@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Wangkanai.AspNetCore.DeviceDetection.Core.Abstractions;
+using Wangkanai.AspNetCore.DeviceDetection.Core.Builder;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -14,9 +16,10 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class DeviceDetectionServiceCollectionExtensions
     {
-        public static IServiceCollection AddDeviceDetection(this IServiceCollection services)
+        public static IDeviceDetectionBuilder AddDeviceDetection(
+            this IServiceCollection services)
         {
-            return services;
+            return new DeviceDetectionBuilder(services);
         }
     }
 }
