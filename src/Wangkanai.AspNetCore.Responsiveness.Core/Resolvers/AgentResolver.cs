@@ -31,11 +31,10 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
                 .FirstOrDefault()
                 ?.ToLowerInvariant();
 
-            foreach (var interpreter in PopulateUserAgents())
-            {
-                // How to interpret??
-            }
-
+            foreach (var interpretor in PopulateUserAgents())
+                if (interpretor.Validate(agent))
+                    return interpretor.CreateDevice(_manager);
+            
             return _manager.CreateDesktopDevice();
         }
 
