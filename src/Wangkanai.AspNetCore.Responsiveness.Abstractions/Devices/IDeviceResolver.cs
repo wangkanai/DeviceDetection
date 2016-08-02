@@ -2,9 +2,8 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using Microsoft.AspNetCore.Http;
-using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
-namespace Wangkanai.AspNetCore.Responsiveness.Core.Abstractions
+namespace Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices
 {
     public interface IDeviceResolver
     {

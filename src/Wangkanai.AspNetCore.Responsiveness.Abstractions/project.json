@@ -10,6 +10,13 @@
       "responsiveness"
     ]
   },
+  "buildOptions": {
+    "warningsAsErrors": true,
+    "nowarn": [
+      "CS1591"
+    ],
+    "xmlDoc": true
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0"
   },

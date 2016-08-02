@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 using Wangkanai.AspNetCore.Responsiveness.Preference;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
 {
@@ -16,8 +17,17 @@ namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
         {
             if(services == null) throw new ArgumentNullException(nameof(services));
 
+            var manager = GetResponsivenessManager(services);
+            services.TryAddSingleton(manager);
+
+            ConfigureDefaultResponsivenessRepository(manager);
 
             return new ResponsivenessCoreBuilder(services);
+        }
+
+        private static void ConfigureDefaultResponsivenessRepository(ResponsivenessManager manager)
+        {
+            throw new NotImplementedException();
         }
 
         private static ResponsivenessManager GetResponsivenessManager(IServiceCollection services)
