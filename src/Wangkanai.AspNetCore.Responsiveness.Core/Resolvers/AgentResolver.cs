@@ -45,7 +45,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
                 new MobilePrefixes(),
                 new MobileKeywords(),
                 new TabletKeywords(),
-                new CrawlerKeywords()
+                new CrawlerAgent()
             };
         }
     }

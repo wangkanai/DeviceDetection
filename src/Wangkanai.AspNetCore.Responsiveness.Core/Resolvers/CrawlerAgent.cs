@@ -6,7 +6,7 @@ using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 {
-    internal class CrawlerKeywords : IUserAgent
+    internal class CrawlerAgent : IUserAgent
     {
         public string[] Keywords { get; } = new string[]
         {
