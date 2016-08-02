@@ -19,6 +19,8 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IResponsivenessBuilder AddResponsiveness(
             this IServiceCollection services)
         {
+            services.AddResponsivenessCore();
+
             return new ResponsivenessBuilder(services);
         }
     }
