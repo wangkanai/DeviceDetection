@@ -7,7 +7,7 @@
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>079bf429-0174-4422-8cd7-62d0987e57c3</ProjectGuid>
-    <RootNamespace>Wangkanai.AspNetCore.Responsiveness.Core</RootNamespace>
+    <RootNamespace>Wangkanai.AspNetCore.Responsiveness</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

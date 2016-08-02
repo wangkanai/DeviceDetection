@@ -1,6 +1,15 @@
 {
   "version": "1.0.0-*",
-
+  "packOptions": {
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/wangkanai/Responsiveness"
+    },
+    "tags": [
+      "aspnetcore",
+      "responsiveness"
+    ]
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0"
   },

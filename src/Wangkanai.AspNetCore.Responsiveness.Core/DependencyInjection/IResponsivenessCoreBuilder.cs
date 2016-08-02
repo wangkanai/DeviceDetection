@@ -3,7 +3,7 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
 {
     public interface IResponsivenessCoreBuilder
     {

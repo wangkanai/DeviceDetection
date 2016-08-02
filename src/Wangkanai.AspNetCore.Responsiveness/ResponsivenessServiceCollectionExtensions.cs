@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Wangkanai.AspNetCore.Responsiveness.Core.Abstractions;
-using Wangkanai.AspNetCore.Responsiveness.Core.Internal;
+using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
+using Wangkanai.AspNetCore.Responsiveness.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

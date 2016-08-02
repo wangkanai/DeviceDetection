@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Wangkanai.AspNetCore.Responsiveness.Core.Abstractions;
-using Wangkanai.AspNetCore.Responsiveness.Core.Internal;
-using Wangkanai.AspNetCore.Responsiveness.Core.Preference;
+using Wangkanai.AspNetCore.Responsiveness.Internal;
+using Wangkanai.AspNetCore.Responsiveness.Preference;
 
-
-namespace Microsoft.Extensions.DependencyInjection
+namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
 {
     public static class ResponsivenessCoreServiceCollectionExtensions
     {

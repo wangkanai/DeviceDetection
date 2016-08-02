@@ -1,6 +1,16 @@
 {
+  "description": "ASP.NET Core Responsive core components.\r\nCommonly used types:\r\nWangkanai.AspNetCore.Responsiveness.AreaAttribute",
   "version": "1.0.0-*",
-
+  "packOptions": {
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/wangkanai/Responsiveness"
+    },
+    "tags": [
+      "aspnetcore",
+      "responsiveness"
+    ]
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
