@@ -8,6 +8,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices
         bool IsMobile { get; }
         bool IsTablet { get; }
         bool IsDesktop { get; }
+        bool IsCrawler { get; }
         string DeviceCode { get; }
     }
 }

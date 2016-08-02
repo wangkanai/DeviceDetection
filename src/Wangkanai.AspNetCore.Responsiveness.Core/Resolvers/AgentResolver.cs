@@ -2,10 +2,12 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 using Wangkanai.AspNetCore.Responsiveness;
+using System.Linq;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 {
@@ -25,7 +27,27 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 
         public IDevice Resolve(HttpContext context)
         {
-            throw new NotImplementedException();
+            var agent = context.Request.Headers["User-Agent"]
+                .FirstOrDefault()
+                ?.ToLowerInvariant();
+
+            foreach (var interpreter in PopulateUserAgents())
+            {
+                // How to interpret??
+            }
+
+            return _manager.CreateDesktopDevice();
+        }
+
+        private IList<IUserAgent> PopulateUserAgents()
+        {
+            return new List<IUserAgent>
+            {
+                new MobilePrefixes(),
+                new MobileKeywords(),
+                new TabletKeywords(),
+                new CrawlerKeywords()
+            };
         }
     }
 }
