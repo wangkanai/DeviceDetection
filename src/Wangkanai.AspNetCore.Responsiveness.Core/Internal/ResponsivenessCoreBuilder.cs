@@ -1,15 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Wangkanai.AspNetCore.Responsiveness.Core.Abstractions;
 
-namespace Wangkanai.AspNetCore.Responsiveness.Core.Builder
+namespace Wangkanai.AspNetCore.Responsiveness.Core.Internal
 {
     public class ResponsivenessCoreBuilder : IResponsivenessCoreBuilder
     {
-        private readonly IServiceCollection _services;
+        public IServiceCollection Services { get; }
 
         public ResponsivenessCoreBuilder(IServiceCollection services)
         {
-            _services = services;
+            Services = services;
         }
     }
 }

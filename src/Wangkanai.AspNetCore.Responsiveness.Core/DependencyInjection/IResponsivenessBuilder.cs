@@ -5,8 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Wangkanai.AspNetCore.Responsiveness.Core.Abstractions
+namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// An interface for configuring Responsiveness services.
@@ -14,6 +15,5 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Abstractions
     public interface IResponsivenessBuilder
     {
         IServiceCollection Services { get; }
-        ApplicationPartManager PartManager { get; }
     }
 }

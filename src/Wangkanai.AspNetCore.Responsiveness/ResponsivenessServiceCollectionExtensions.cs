@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Wangkanai.AspNetCore.Responsiveness.Core.Abstractions;
-using Wangkanai.AspNetCore.Responsiveness.Core.Builder;
+using Wangkanai.AspNetCore.Responsiveness.Core.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -19,9 +19,11 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IResponsivenessBuilder AddResponsiveness(
             this IServiceCollection services)
         {
-            services.AddResponsivenessCore();
+            if(services == null) throw new ArgumentNullException(nameof(services));
 
-            return new ResponsivenessBuilder(services);
+            var builder = services.AddResponsivenessCore();
+
+            return new ResponsivenessBuilder(builder.Services);
         }
     }
 }
