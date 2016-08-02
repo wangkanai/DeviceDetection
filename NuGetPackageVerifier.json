@@ -1,0 +1,13 @@
+{
+    "adx":{
+        "rules" : ["AdxVerificationCompositeRule"],
+        "packages":{
+            "Wangkanai.AspNetCore.Responsiveness" : {},
+            "Wangkanai.AspNetCore.Responsiveness.Core" :{},
+            "Wangkanai.AspNetCore.Responsiveness.Abstraction":{}
+        }
+    },
+    "Default":{
+        "rules":[ "DefaultVerificationRule"]
+    }
+}
