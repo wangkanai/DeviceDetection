@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Wangkanai.AspNetCore.DeviceDetection.Core")]
+[assembly: AssemblyProduct("Wangkanai.AspNetCore.Responsiveness")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("079bf429-0174-4422-8cd7-62d0987e57c3")]
+[assembly: Guid("aa8848e6-cb48-409c-80ba-ffa9a8ee5b6f")]

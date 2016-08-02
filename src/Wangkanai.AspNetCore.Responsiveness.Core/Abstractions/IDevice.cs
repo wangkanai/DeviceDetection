@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Wangkanai.AspNetCore.DeviceDetection.Core.Abstractions
+namespace Wangkanai.AspNetCore.Responsiveness.Core.Abstractions
 {
-    public interface IDeviceDetectionBuilder
+    public interface IDevice
     {
     }
 }

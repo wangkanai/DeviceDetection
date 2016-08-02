@@ -29,7 +29,7 @@ namespace Sandbox
         {
             // Add framework services.
             services.AddMvc();
-            services.AddDeviceDetection();
+            services.AddResponsiveness();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>aa8848e6-cb48-409c-80ba-ffa9a8ee5b6f</ProjectGuid>
-    <RootNamespace>Wangkanai.AspNetCore.DeviceDetection</RootNamespace>
+    <RootNamespace>Wangkanai.AspNetCore.Responsiveness</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

@@ -16,9 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{EB3816
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sandbox", "sample\Sandbox\Sandbox.xproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.DeviceDetection", "src\Wangkanai.AspNetCore.DeviceDetection\Wangkanai.AspNetCore.DeviceDetection.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness", "src\Wangkanai.AspNetCore.Responsiveness\Wangkanai.AspNetCore.Responsiveness.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.DeviceDetection.Core", "src\Wangkanai.AspNetCore.DeviceDetection.Core\Wangkanai.AspNetCore.DeviceDetection.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Core", "src\Wangkanai.AspNetCore.Responsiveness.Core\Wangkanai.AspNetCore.Responsiveness.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
