@@ -25,5 +25,16 @@ namespace Microsoft.Extensions.DependencyInjection
 
             return new ResponsivenessBuilder(builder.Services);
         }
+
+        public static IResponsivenessBuilder AddResponsiveness<T>(
+            this IServiceCollection services)
+            where T : class
+        {
+            if (services == null) throw new ArgumentNullException(nameof(services));
+
+            var builder = services.AddResponsivenessCore();
+
+            return new ResponsivenessBuilder(builder.Services);
+        }
     }
 }
