@@ -83,6 +83,42 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             Assert.Equal(expected.IsMobile, device.IsMobile);
         }
 
+        [Fact]
+        public void Mobile_device_accept_wap_detection()
+        {
+            // Arrange            
+            var context = new DefaultHttpContext();
+            var header = "Accept";
+            var headerValue = "wap";
+            context.Request.Headers.Add(header, new[] { headerValue });
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Mobile);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsMobile, device.IsMobile);
+        }
+
+        [Fact]
+        public void Mobile_device_opera_mini_detection()
+        {
+            // Arrange            
+            var context = new DefaultHttpContext();
+            var header = "OperaMini";
+            var headerValue = "OperaMini";
+            context.Request.Headers.Add(header, new[] { headerValue });
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Mobile);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsMobile, device.IsMobile);
+        }
+
         private static DefaultHttpContext CreateUserAgent(string value)
         {
             var context = new DefaultHttpContext();
