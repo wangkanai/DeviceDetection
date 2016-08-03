@@ -1,6 +1,8 @@
 {
   "description": "ASP.NET Core Responsive core components.\r\nCommonly used types:\r\nWangkanai.AspNetCore.Responsiveness.AreaAttribute",
   "version": "1.0.0-*",
+  "authors": [ "Sarin Na Wangkanai (@wangkanai)" ],
+  "copyright": "Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.",
   "packOptions": {
     "repository": {
       "type": "git",
@@ -9,7 +11,9 @@
     "tags": [
       "aspnetcore",
       "responsiveness"
-    ]
+    ],
+    "iconUrl": "http://0.gravatar.com/avatar/f58457d38ab3bc43526c6e52af17494e",
+    "licenseUrl": "https://github.com/wangkanai/Responsiveness/blob/master/LICENSE"
   },
   "buildOptions": {
     "warningsAsErrors": true,
