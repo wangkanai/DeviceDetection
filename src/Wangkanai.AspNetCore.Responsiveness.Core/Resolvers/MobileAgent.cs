@@ -17,6 +17,8 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
             "opera mini", "palm", "psp", "phone", "smartphone", "symbian", "up.browser",
             "up.link", "wap", "windows ce"
         };
+
+        // reference 4 chare from http://www.webcab.de/wapua.htm
         private string[] Prefixes { get; } = new string[]
         {
             "w3c ", "w3c-", "acs-", "alav", "alca", "amoi", "audi", "avan", "benq",
@@ -43,7 +45,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
                 ?.ToLowerInvariant();
 
             // user agent prefix detection
-            if (agent != null && agent.Length >= 4 && Prefixes.Any(prefixe => agent.StartsWith(prefixe)))
+            if (agent != null && agent.Length >= 4 && Prefixes.Any(prefix => agent.StartsWith(prefix)))
                 return true;
             // user agent keyword detection
             if (agent != null && Keywords.Any(keyword => agent.Contains(keyword)))
@@ -59,17 +61,6 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
             if (context.Request.Headers.Any(header => header.Value.Any(value => value.Contains("OperaMini"))))
                 return true;
 
-            return false;
-        }
-
-        private bool QueryKeywords(string agent)
-        {
-            //Keywords.Any(keyword => agent.Contains(keyword))
-            foreach (var keyword in Keywords)
-            {
-                var result = agent.Contains(keyword);
-                return result;
-            }
             return false;
         }
     }

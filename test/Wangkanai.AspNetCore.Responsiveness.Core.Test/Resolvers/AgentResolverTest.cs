@@ -31,21 +31,53 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
         public void Mobile_device_user_agent_detection(string value)
         {
             // Arrange
-            var context = new DefaultHttpContext();
-            var header = "User-Agent";
-            var headerValue = value;
-            context.Request.Headers.Add(header, new[] {headerValue});
+            var context = CreateUserAgent(value);
 
-            var manager = new DefaultDeviceManager();
-            var options = new Mock<IOptions<DeviceOptions>>();
-            var resolver = new AgentResolver(options.Object, manager);
+            var resolver = CreateResolver();
             var expected = new DefaultDevice(DeviceType.Mobile);
-            
+
             // Act
             var device = resolver.Resolve(context);
 
             // Assert
             Assert.Equal(expected.IsMobile, device.IsMobile);
+        }
+
+        [Theory]
+        [InlineData("EricssonT68/R101")]
+        [InlineData("Nokia9210/2.0 Symbian-Crystal/6.1 Nokia/2.1")]
+        [InlineData("SAMSUNG-SGH-R220/1.0 UP/4.1.19k")]
+        [InlineData("SonyEricssonT68/R201A")]
+        [InlineData("WinWAP 3.0 PRO")]
+        public void Mobile_device_prefix_detection(string value)
+        {
+            // Arrange            
+            var context = CreateUserAgent(value);
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Mobile);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsMobile, device.IsMobile);
+        }
+
+        private static DefaultHttpContext CreateUserAgent(string value)
+        {
+            var context = new DefaultHttpContext();
+            var header = "User-Agent";
+            var headerValue = value;
+            context.Request.Headers.Add(header, new[] { headerValue });
+            return context;
+        }
+
+        private static AgentResolver CreateResolver()
+        {
+            var manager = new DefaultDeviceManager();
+            var options = new Mock<IOptions<DeviceOptions>>();
+            var resolver = new AgentResolver(options.Object, manager);
+            return resolver;
         }
     }
 }
