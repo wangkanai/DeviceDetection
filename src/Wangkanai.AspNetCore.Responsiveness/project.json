@@ -29,10 +29,8 @@
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Wangkanai.AspNetCore.Responsiveness.Core": "1.0.0-*"
   },
-
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
+    "net451": {},
+    "netstandard1.6": {}
   }
 }
