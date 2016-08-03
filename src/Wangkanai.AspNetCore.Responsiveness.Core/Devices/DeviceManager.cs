@@ -6,7 +6,7 @@ using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Devices
 {
-    public class DefaultDeviceManager : IDeviceManager
+    public class DeviceManager : IDeviceManager
     {
         public IDevice CreateDesktopDevice()
             => new DefaultDevice(DeviceType.Desktop);

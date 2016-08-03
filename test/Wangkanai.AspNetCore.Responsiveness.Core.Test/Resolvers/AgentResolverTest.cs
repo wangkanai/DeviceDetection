@@ -63,6 +63,26 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             Assert.Equal(expected.IsMobile, device.IsMobile);
         }
 
+        [Theory]
+        [InlineData("x-wap-profile")]
+        [InlineData("Profile")]
+        public void Mobile_device_UAProf_detection(string value)
+        {
+            // Arrange            
+            var context = new DefaultHttpContext();
+            var header = value;
+            var headerValue = "<xml><doc></doc>";
+            context.Request.Headers.Add(header, new[] { headerValue });
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Mobile);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsMobile, device.IsMobile);
+        }
+
         private static DefaultHttpContext CreateUserAgent(string value)
         {
             var context = new DefaultHttpContext();
@@ -74,7 +94,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
 
         private static AgentResolver CreateResolver()
         {
-            var manager = new DefaultDeviceManager();
+            var manager = new DeviceManager();
             var options = new Mock<IOptions<DeviceOptions>>();
             var resolver = new AgentResolver(options.Object, manager);
             return resolver;
