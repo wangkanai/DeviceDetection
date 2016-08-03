@@ -28,8 +28,9 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
         {
             return new List<IUserAgent>
             {
-                new MobileAgent(),
+                new DesktopAgent(),
                 new TabletAgent(),
+                new MobileAgent(),                
                 new CrawlerAgent()
             };
         }

@@ -119,6 +119,25 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             Assert.Equal(expected.IsMobile, device.IsMobile);
         }
 
+
+        [Theory]
+        [InlineData("Mozilla/5.0 (Android 4.4; Tablet; rv:41.0) Gecko/41.0 Firefox/41.0")]
+        [InlineData("Mozilla/5.0 (Tablet; rv:26.0) Gecko/26.0 Firefox/26.0")]
+        [InlineData("Mozilla/5.0 (iPad; U; CPU OS 4_3_5 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8L1 Safari/6533.18.5")]
+        public void Tablet_device_keywords_detection(string value)
+        {
+            // Arrange            
+            var context = CreateUserAgent(value);
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Tablet);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsTablet, device.IsTablet);
+        }
+
         private static DefaultHttpContext CreateUserAgent(string value)
         {
             var context = new DefaultHttpContext();

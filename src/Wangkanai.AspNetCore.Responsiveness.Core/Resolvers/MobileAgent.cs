@@ -40,9 +40,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 
         public bool Validate(HttpContext context)
         {
-            var agent = context.Request.Headers["User-Agent"]
-                .FirstOrDefault()
-                ?.ToLowerInvariant();
+            var agent = context.Request.Headers["User-Agent"].FirstOrDefault()?.ToLowerInvariant();
 
             // user agent prefix detection
             if (agent != null && agent.Length >= 4 && Prefixes.Any(prefix => agent.StartsWith(prefix)))
