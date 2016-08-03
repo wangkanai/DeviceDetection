@@ -8,6 +8,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Devices
         Mobile,
         Tablet,
         Desktop,
+        Crawler,
         Other
     }
 }

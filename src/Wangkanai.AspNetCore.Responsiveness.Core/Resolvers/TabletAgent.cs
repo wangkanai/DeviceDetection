@@ -16,12 +16,13 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 
         public IDevice CreateDevice(IDeviceManager _manager)
         {
-            throw new NotImplementedException();
+            return _manager.CreateTabletDevice();
         }
 
         public bool Validate(HttpContext context)
         {
-            throw new NotImplementedException();
+            // not yet implemented
+            return false;
         }
     }
 }

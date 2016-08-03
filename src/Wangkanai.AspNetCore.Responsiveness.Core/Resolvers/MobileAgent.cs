@@ -41,7 +41,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
             var agent = context.Request.Headers["User-Agent"]
                 .FirstOrDefault()
                 ?.ToLowerInvariant();
-        
+
             // user agent prefix detection
             if (agent != null && agent.Length >= 4 && Prefixes.Any(prefixe => agent.StartsWith(prefixe)))
                 return true;
@@ -59,6 +59,17 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
             if (context.Request.Headers.Any(header => header.Value.Any(value => value.Contains("OperaMini"))))
                 return true;
 
+            return false;
+        }
+
+        private bool QueryKeywords(string agent)
+        {
+            //Keywords.Any(keyword => agent.Contains(keyword))
+            foreach (var keyword in Keywords)
+            {
+                var result = agent.Contains(keyword);
+                return result;
+            }
             return false;
         }
     }

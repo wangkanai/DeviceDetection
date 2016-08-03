@@ -8,7 +8,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices
         IDevice CreateDesktopDevice();
         IDevice CreateTabletDevice();
         IDevice CreateMobileDevice();
-        IDevice CreateCrawkerDevice();
+        IDevice CreateCrawlerDevice();
         IDevice CreateOtherDevice(string code);
     }
 }
