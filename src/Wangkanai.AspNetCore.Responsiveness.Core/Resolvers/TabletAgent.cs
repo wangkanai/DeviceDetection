@@ -2,24 +2,24 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
+using Microsoft.AspNetCore.Http;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 {
-    internal class TabletKeywords : IUserAgent
+    internal class TabletAgent : IUserAgent
     {
         public string[] Keywords { get; } = new string[]
         {
             "ipad", "playbook", "hp-tablet", "kindle"
         };
-        public KeywordType Type { get; } = KeywordType.Keywords;
 
         public IDevice CreateDevice(IDeviceManager _manager)
         {
             throw new NotImplementedException();
         }
 
-        public bool Validate(string agent)
+        public bool Validate(HttpContext context)
         {
             throw new NotImplementedException();
         }

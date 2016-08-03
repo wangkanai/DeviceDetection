@@ -19,34 +19,27 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
         public AgentResolver(IOptions<DeviceOptions> options, IDeviceManager manager)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
-            if(manager == null) throw  new ArgumentNullException(nameof(manager));
+            if (manager == null) throw new ArgumentNullException(nameof(manager));
 
             _options = options;
             _manager = manager;
         }
-
-        public IDevice Resolve(HttpContext context)
-        {
-            var agent = context.Request.Headers["User-Agent"]
-                .FirstOrDefault()
-                ?.ToLowerInvariant();
-
-            foreach (var interpretor in PopulateUserAgents())
-                if (interpretor.Validate(agent))
-                    return interpretor.CreateDevice(_manager);
-            
-            return _manager.CreateDesktopDevice();
-        }
-
         private IList<IUserAgent> PopulateUserAgents()
         {
             return new List<IUserAgent>
             {
-                new MobilePrefixes(),
-                new MobileKeywords(),
-                new TabletKeywords(),
+                new MobileAgent(),
+                new TabletAgent(),
                 new CrawlerAgent()
             };
+        }
+        public IDevice Resolve(HttpContext context)
+        {
+            foreach (var interpretor in PopulateUserAgents())
+                if (interpretor.Validate(context))
+                    return interpretor.CreateDevice(_manager);
+
+            return _manager.CreateDesktopDevice();
         }
     }
 }

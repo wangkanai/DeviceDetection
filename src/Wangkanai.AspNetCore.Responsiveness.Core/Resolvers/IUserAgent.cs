@@ -9,9 +9,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 {
     internal interface IUserAgent
     {
-        string[] Keywords { get; }
-        KeywordType Type { get; }
         IDevice CreateDevice(IDeviceManager _manager);
-        bool Validate(string agent);
+        bool Validate(HttpContext context);
     }
 }
