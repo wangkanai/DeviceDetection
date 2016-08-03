@@ -8,6 +8,9 @@ branches:
     - /^(.*\/)?ci-.*$/
 build_script:
   - build.cmd --quiet verify
+artifacts:
+  - path: '**\*.nupkg'
+
 clone_depth: 1
 test: off
 deploy: off
