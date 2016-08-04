@@ -2,6 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
@@ -11,8 +12,8 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
     {
         private string[] Keywords { get; } = new string[]
         {
-
-        };        
+            "bot","slurp", "spider"
+        };
 
         public IDevice CreateDevice(IDeviceManager _manager)
         {
@@ -21,8 +22,11 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 
         public bool Validate(HttpContext context)
         {
-            //not yet implemented
-            return false;
+            var agent = context.Request.Headers["User-Agent"].FirstOrDefault()?.ToLowerInvariant();
+
+            if (agent == null) return false;
+            if (!Keywords.Any(keyword => agent.Contains(keyword))) return false;
+            return true;
         }
     }
 }

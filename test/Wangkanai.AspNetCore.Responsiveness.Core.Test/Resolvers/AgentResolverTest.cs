@@ -138,6 +138,48 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             Assert.Equal(expected.IsTablet, device.IsTablet);
         }
 
+        [Theory]
+        [InlineData("Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        [InlineData("Mozilla/5.0 (Windows NT x.y; Win64; x64; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        [InlineData("Mozilla/5.0 (Windows NT x.y; WOW64; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        [InlineData("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36")]
+        [InlineData("Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        [InlineData("Mozilla/5.0 (Macintosh; PPC Mac OS X x.y; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        [InlineData("Mozilla/5.0 (X11; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0")]        
+        [InlineData("Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0")]
+        public void Desktop_device_keywords_detection(string value)
+        {
+            // Arrange            
+            var context = CreateUserAgent(value);
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Desktop);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsDesktop, device.IsDesktop);
+        }
+
+        [Theory]
+        [InlineData("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")]
+        [InlineData("Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)")]
+        [InlineData("Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)")]
+        [InlineData("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)")]
+        public void Crawler_device_keywords_detection(string value)
+        {
+            // Arrange            
+            var context = CreateUserAgent(value);
+            var resolver = CreateResolver();
+            var expected = new DefaultDevice(DeviceType.Crawler);
+
+            // Act
+            var device = resolver.Resolve(context);
+
+            // Assert
+            Assert.Equal(expected.IsCrawler, device.IsCrawler);
+        }
+
         private static DefaultHttpContext CreateUserAgent(string value)
         {
             var context = new DefaultHttpContext();
