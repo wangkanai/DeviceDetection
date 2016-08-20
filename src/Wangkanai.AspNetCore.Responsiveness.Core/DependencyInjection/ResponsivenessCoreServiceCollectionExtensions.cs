@@ -27,16 +27,15 @@ namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
 
         private static void ConfigureDefaultResponsivenessRepository(ResponsivenessManager manager)
         {
-            throw new NotImplementedException();
+            if(manager == null) throw new NotImplementedException(nameof(manager));
         }
 
         private static ResponsivenessManager GetResponsivenessManager(IServiceCollection services)
         {
             var manager = GetServiceFromCollection<ResponsivenessManager>(services);
-            if (manager == null)
-            {
+            if (manager == null)            
                 manager = new ResponsivenessManager();
-            }
+            
             return manager;
         }
 
