@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class ResponsivenessBuilderExtensions
     {
         /// <summary>
-        /// Adds MVC view responsivenewss to the application.
+        /// Adds MVC view responsiveness to the application.
         /// </summary>
         /// <param name="builder">The <see cref="IMvcBuilder"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
