@@ -2,7 +2,9 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.AspNetCore.Responsiveness;
+using Wangkanai.AspNetCore.Responsiveness.Abstractions;
 using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 
@@ -14,21 +16,48 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class ResponsivenessServiceCollectionExtensions
     {
-        public static IMvcBuilder AddResponsiveness(this IMvcBuilder builder)
+        /// <summary>
+        /// Adds services required for application responsive.
+        /// </summary>
+        /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+        /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
+        public static IServiceCollection AddResponsiveness(
+            this IServiceCollection services)
         {
-            if(builder == null) throw new ArgumentNullException(nameof(builder));
+            if(services == null) throw new ArgumentNullException(nameof(services));
 
-            return AddResponsiveness(builder, null);
+            services.AddOptions();
+
+            AddResponsivenessServices(services);
+
+            return services;
         }
-
-        public static IMvcBuilder AddResponsiveness(
-            this IMvcBuilder builder,
+        
+        public static IServiceCollection AddResponsiveness(
+            this IServiceCollection services,
             Action<ResponsivenessOptions> setupAction)            
         {
-            if (builder == null) throw new ArgumentNullException(nameof(builder));
+            if (services == null) throw new ArgumentNullException(nameof(services));
+            if(setupAction == null) throw new ArgumentNullException(nameof(setupAction));
+            
+            AddResponsivenessServices(services, setupAction);
 
-            ResponsivenessServices.AddResponsivenessServices(builder.Services, setupAction);
-            return builder;
+            return services;
+        }
+
+        internal static void AddResponsivenessServices(
+            IServiceCollection services)
+        {
+            // waiting for implimentation
+            services.TryAddSingleton<IResponsivenessManagerFactory,ResponsivenessManagerFactory>();
+        }
+
+        internal static void AddResponsivenessServices(
+            IServiceCollection services,
+            Action<ResponsivenessOptions> setAction)
+        {
+            AddResponsivenessServices(services);
+            services.Configure(setAction);
         }
     }
 }

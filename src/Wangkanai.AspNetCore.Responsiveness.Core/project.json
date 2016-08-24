@@ -25,6 +25,8 @@
     "xmlDoc": true
   },
   "dependencies": {
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
     "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Wangkanai.AspNetCore.Responsiveness.Abstractions": "1.0.0-*",

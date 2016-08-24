@@ -2,11 +2,13 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System.Collections.Generic;
+using Wangkanai.AspNetCore.Responsiveness;
+using Wangkanai.AspNetCore.Responsiveness.Abstractions;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 
-namespace Wangkanai.AspNetCore.Responsiveness.Preference
+namespace Wangkanai.AspNetCore.Responsiveness
 {
-    public class ResponsivenessManager
+    public class ResponsivenessManagerFactory : IResponsivenessManagerFactory
     {
         public IList<IDeviceProvider> DeviceProviders { get; } = new List<IDeviceProvider>();
     }

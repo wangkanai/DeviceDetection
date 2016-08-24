@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
-using Wangkanai.AspNetCore.Responsiveness.Preference;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
@@ -25,16 +24,16 @@ namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
             return new ResponsivenessCoreBuilder(services);
         }
 
-        private static void ConfigureDefaultResponsivenessRepository(ResponsivenessManager manager)
+        private static void ConfigureDefaultResponsivenessRepository(ResponsivenessManagerFactory managerFactory)
         {
-            if(manager == null) throw new NotImplementedException(nameof(manager));
+            if(managerFactory == null) throw new NotImplementedException(nameof(managerFactory));
         }
 
-        private static ResponsivenessManager GetResponsivenessManager(IServiceCollection services)
+        private static ResponsivenessManagerFactory GetResponsivenessManager(IServiceCollection services)
         {
-            var manager = GetServiceFromCollection<ResponsivenessManager>(services);
+            var manager = GetServiceFromCollection<ResponsivenessManagerFactory>(services);
             if (manager == null)            
-                manager = new ResponsivenessManager();
+                manager = new ResponsivenessManagerFactory();
             
             return manager;
         }

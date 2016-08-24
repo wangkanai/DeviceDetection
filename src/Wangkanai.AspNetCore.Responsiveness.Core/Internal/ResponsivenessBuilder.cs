@@ -13,7 +13,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Internal
     public class ResponsivenessBuilder : IResponsivenessBuilder
     {
         public IServiceCollection Services { get; }
-        //public ResponsivenessManager ResponsivenessManager { get; }
+        //public ResponsivenessManagerFactory ResponsivenessManagerFactory { get; }
 
         /// <summary>
         /// Initializes a new <see cref="ResponsivenessBuilder"/> instance.

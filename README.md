@@ -14,9 +14,10 @@ PM> install-package Wangkanai.AspNetCore.Responsiveness -pre
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
+    services.AddResponsiveness();
     // Add framework services.
     services.AddMvc()
-        .AddResponsiveness();    
+        .AddViewResponsiveness();    
 }
 ```
 ```csharp
