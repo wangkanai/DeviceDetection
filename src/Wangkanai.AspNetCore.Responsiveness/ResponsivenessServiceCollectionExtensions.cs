@@ -12,14 +12,14 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class ResponsivenessServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds services required for application responsive.
+        /// Adds services required for application responsiveness.
         /// </summary>
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
         public static IServiceCollection AddResponsiveness(
             this IServiceCollection services)
         {
-            if(services == null) throw new ArgumentNullException(nameof(services));
+            if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddOptions();
 
@@ -27,14 +27,20 @@ namespace Microsoft.Extensions.DependencyInjection
 
             return services;
         }
-        
+        /// <summary>
+        /// Adds services required for application responsiveness.
+        /// </summary>
+        /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+        /// <param name="setupAction">
+        /// An <see cref="Action{ResponsivenessOptions}"/> to configure the <see cref="ResponsivenessOptions"/></param>
+        /// <returns>The <see cref="IServiceCollection"/> sa that addidtional call be chained.</returns>
         public static IServiceCollection AddResponsiveness(
             this IServiceCollection services,
-            Action<ViewResponsivenessOptions> setupAction)            
+            Action<ResponsivenessOptions> setupAction)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
-            if(setupAction == null) throw new ArgumentNullException(nameof(setupAction));
-            
+            if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
+
             AddResponsivenessServices(services, setupAction);
 
             return services;
@@ -44,12 +50,12 @@ namespace Microsoft.Extensions.DependencyInjection
             IServiceCollection services)
         {
             // waiting for implimentation
-            services.TryAddSingleton<IResponsivenessManagerFactory,ResponsivenessManagerFactory>();
+            services.TryAddSingleton<IResponsivenessManagerFactory, ResponsivenessManagerFactory>();
         }
 
         internal static void AddResponsivenessServices(
             IServiceCollection services,
-            Action<ViewResponsivenessOptions> setAction)
+            Action<ResponsivenessOptions> setAction)
         {
             AddResponsivenessServices(services);
             services.Configure(setAction);
