@@ -26,13 +26,14 @@ namespace Microsoft.Extensions.DependencyInjection
         /// Adds MVC view locatization to the application.
         /// </summary>
         /// <param name="builder">the <see cref="IMvcBuilder"/>.</param>
-        /// <param name="setupAction">An action to configure the <see cref="ResponsivenessOptions"/>.</param>
+        /// <param name="setupAction">An action to configure the <see cref="ViewResponsivenessOptions"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
         public static IMvcBuilder AddViewResponsiveness(
             this IMvcBuilder builder,
-            Action<ResponsivenessOptions> setupAction)
+            Action<ViewResponsivenessOptions> setupAction)
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
+            if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
 
             ResponsivenessServices.AddResponsivenessServices(builder.Services, setupAction);
             return builder;

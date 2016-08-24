@@ -2,6 +2,8 @@
 
 AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master)
 
+![ASP.NET Core Responsiveness](aspnet-core-responsiveness.png)
+
 ASP.NET Core Responsiveness middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
 
@@ -25,7 +27,7 @@ public void ConfigureServices(IServiceCollection services)
 * `AddResponsiveness` Adds the responsiveness services to the services container.
 * `AddViewResponsiveness` Adds support for device view files. In this sample view responsiveness is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
 
-#### Responsiveness middleware
+#### Responsiveness Middleware
 
 The current device on a request is set in the responsiveness middleware. The responsiveness middleware is enabled in the `Configure` method of *Startup.cs* file.
 ```csharp

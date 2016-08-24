@@ -5,8 +5,6 @@ using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.AspNetCore.Responsiveness;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions;
-using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
-using Wangkanai.AspNetCore.Responsiveness.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -35,7 +33,7 @@ namespace Microsoft.Extensions.DependencyInjection
         
         public static IServiceCollection AddResponsiveness(
             this IServiceCollection services,
-            Action<ResponsivenessOptions> setupAction)            
+            Action<ViewResponsivenessOptions> setupAction)            
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if(setupAction == null) throw new ArgumentNullException(nameof(setupAction));
@@ -54,7 +52,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         internal static void AddResponsivenessServices(
             IServiceCollection services,
-            Action<ResponsivenessOptions> setAction)
+            Action<ViewResponsivenessOptions> setAction)
         {
             AddResponsivenessServices(services);
             services.Configure(setAction);

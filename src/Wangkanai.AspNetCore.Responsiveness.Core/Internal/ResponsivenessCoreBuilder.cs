@@ -6,13 +6,13 @@ using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Internal
 {
-    public class ResponsivenessCoreBuilder : IResponsivenessCoreBuilder
-    {
-        public IServiceCollection Services { get; }
+    //public class ResponsivenessCoreBuilder : IResponsivenessCoreBuilder
+    //{
+    //    public IServiceCollection Services { get; }
 
-        public ResponsivenessCoreBuilder(IServiceCollection services)
-        {
-            Services = services;
-        }
-    }
+    //    public ResponsivenessCoreBuilder(IServiceCollection services)
+    //    {
+    //        Services = services;
+    //    }
+    //}
 }

@@ -10,7 +10,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Internal
     {
         public static void AddResponsivenessServices(
             IServiceCollection services,
-            Action<ResponsivenessOptions> setupAction)
+            Action<ViewResponsivenessOptions> setupAction)
         {
             
         }

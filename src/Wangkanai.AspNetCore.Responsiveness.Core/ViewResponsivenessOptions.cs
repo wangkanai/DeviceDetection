@@ -6,7 +6,7 @@ using Wangkanai.AspNetCore.Responsiveness.Devices;
 
 namespace Wangkanai.AspNetCore.Responsiveness
 {
-    public class ResponsivenessOptions
+    public class ViewResponsivenessOptions
     {
         
     }

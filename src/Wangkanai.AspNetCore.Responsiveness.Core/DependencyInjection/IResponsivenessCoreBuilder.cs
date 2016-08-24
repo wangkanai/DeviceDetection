@@ -5,8 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Wangkanai.AspNetCore.Responsiveness.DependencyInjection
 {
-    public interface IResponsivenessCoreBuilder
-    {
-        IServiceCollection Services { get; }
-    }
+    //public interface IResponsivenessCoreBuilder
+    //{
+    //    IServiceCollection Services { get; }
+    //}
 }

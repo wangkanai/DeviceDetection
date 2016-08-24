@@ -7,24 +7,24 @@ using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Internal
 {
-    /// <summary>
-    /// Allows fine grained configuration of Responsiveness services.
-    /// </summary>
-    public class ResponsivenessBuilder : IResponsivenessBuilder
-    {
-        public IServiceCollection Services { get; }
-        //public ResponsivenessManagerFactory ResponsivenessManagerFactory { get; }
+    ///// <summary>
+    ///// Allows fine grained configuration of Responsiveness services.
+    ///// </summary>
+    //public class ResponsivenessBuilder : IResponsivenessBuilder
+    //{
+    //    public IServiceCollection Services { get; }
+    //    //public ResponsivenessManagerFactory ResponsivenessManagerFactory { get; }
 
-        /// <summary>
-        /// Initializes a new <see cref="ResponsivenessBuilder"/> instance.
-        /// </summary>
-        /// <param name="services">The <see cref="IServiceCollection"/></param>
-        public ResponsivenessBuilder(
-            IServiceCollection services)
-        {
-            if (services == null) throw new ArgumentNullException(nameof(services));
+    //    /// <summary>
+    //    /// Initializes a new <see cref="ResponsivenessBuilder"/> instance.
+    //    /// </summary>
+    //    /// <param name="services">The <see cref="IServiceCollection"/></param>
+    //    public ResponsivenessBuilder(
+    //        IServiceCollection services)
+    //    {
+    //        if (services == null) throw new ArgumentNullException(nameof(services));
 
-            Services = services;
-        }
-    }
+    //        Services = services;
+    //    }
+    //}
 }
