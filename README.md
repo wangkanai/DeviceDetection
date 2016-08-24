@@ -31,7 +31,14 @@ The current device on a request is set in the responsiveness middleware. The res
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 {
-    app.UseResponsiveness();
+    app.UseResponsiveness(new RequestResponsivenessOptions{
+        SupportedDevices = new[]
+        {
+            DeviceType.Desktop,
+            DeviceType.Mobile
+        }        
+    });
+
     app.UseMvc(routes =>
     {
         routes.MapRoute(

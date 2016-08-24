@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Wangkanai.AspNetCore.Responsiveness;
+using Wangkanai.AspNetCore.Responsiveness.Devices;
 
 namespace Sandbox
 {
@@ -30,7 +32,7 @@ namespace Sandbox
             services.AddResponsiveness();
             // Add framework services.
             services.AddMvc()
-                .AddViewResponsiveness();            
+                .AddViewResponsiveness();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +52,15 @@ namespace Sandbox
             }
 
             app.UseStaticFiles();
+
+            app.UseResponsiveness(new RequestResponsivenessOptions
+            {
+                SupportedDevices = new[]
+                {
+                    DeviceType.Desktop,
+                    DeviceType.Mobile
+                }
+            });
 
             app.UseMvc(routes =>
             {
