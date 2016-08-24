@@ -2,10 +2,7 @@
 
 AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master)
 
-<p align="center">
-
 ![ASP.NET Core Responsiveness](https://raw.githubusercontent.com/wangkanai/Responsiveness/master/asp.net-core-responsiveness.png)
-</p>
 
 ASP.NET Core Responsiveness middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
