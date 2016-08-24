@@ -10,7 +10,9 @@ Being to target difference client devices with seperation of concern is crucial,
 ```powershell
 PM> install-package Wangkanai.AspNetCore.Responsiveness -pre
 ```
-### Setup and configure
+### Implement a strategy to select the device for each request
+#### Configuring Responsiveness
+Responsiveness is configured in the `ConfigureServices` method:
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -20,6 +22,12 @@ public void ConfigureServices(IServiceCollection services)
         .AddViewResponsiveness();    
 }
 ```
+* `AddResponsiveness` Adds the responsiveness services to the services container.
+* `AddViewResponsiveness` Adds support for device view files. In this sample view responsiveness is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
+
+#### Responsiveness middleware
+
+The current device on a request is set in the responsiveness middleware. The responsiveness middleware is enabled in the `Configure` method of *Startup.cs* file.
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 {
@@ -32,3 +40,4 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     });
 }
 ```
+
