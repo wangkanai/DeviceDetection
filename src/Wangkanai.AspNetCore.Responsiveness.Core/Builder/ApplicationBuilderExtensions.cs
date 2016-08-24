@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using System;
 using Microsoft.Extensions.Options;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 

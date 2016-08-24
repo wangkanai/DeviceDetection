@@ -2,7 +2,6 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System.Collections.Generic;
-using Wangkanai.AspNetCore.Responsiveness;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 

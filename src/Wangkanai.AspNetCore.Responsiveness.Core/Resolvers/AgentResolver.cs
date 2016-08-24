@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
-using Wangkanai.AspNetCore.Responsiveness;
-using System.Linq;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
 {

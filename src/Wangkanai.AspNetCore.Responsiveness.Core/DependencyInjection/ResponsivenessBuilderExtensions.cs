@@ -1,17 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Wangkanai.AspNetCore.Responsiveness;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
+    /// <summary>
+    /// Extension methods for configuring MVC view responsiveness
+    /// </summary>    
     public static class ResponsivenessBuilderExtensions
     {
         /// <summary>
-        /// Adds MVC view locatization to the application.
+        /// Adds MVC view responsivenewss to the application.
         /// </summary>
         /// <param name="builder">The <see cref="IMvcBuilder"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
@@ -23,7 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return AddViewResponsiveness(builder, null);
         }
         /// <summary>
-        /// Adds MVC view locatization to the application.
+        /// Adds MVC view responsiveness to the application.
         /// </summary>
         /// <param name="builder">the <see cref="IMvcBuilder"/>.</param>
         /// <param name="setupAction">An action to configure the <see cref="ViewResponsivenessOptions"/>.</param>
