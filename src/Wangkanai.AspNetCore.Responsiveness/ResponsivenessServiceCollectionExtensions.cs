@@ -2,9 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Wangkanai.AspNetCore.Responsiveness;
 using Wangkanai.AspNetCore.Responsiveness.DependencyInjection;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 
@@ -16,25 +14,21 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class ResponsivenessServiceCollectionExtensions
     {
-        public static IResponsivenessBuilder AddResponsiveness(
-            this IServiceCollection services)
+        public static IMvcBuilder AddResponsiveness(this IMvcBuilder builder)
         {
-            if(services == null) throw new ArgumentNullException(nameof(services));
+            if(builder == null) throw new ArgumentNullException(nameof(builder));
 
-            var builder = services.AddResponsivenessCore();
-
-            return new ResponsivenessBuilder(builder.Services);
+            return AddResponsiveness(builder, null);
         }
 
-        public static IResponsivenessBuilder AddResponsiveness<T>(
-            this IServiceCollection services)
-            where T : class
+        public static IMvcBuilder AddResponsiveness(
+            this IMvcBuilder builder,
+            Action<ResponsivenessOptions> setupAction)            
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
+            if (builder == null) throw new ArgumentNullException(nameof(builder));
 
-            var builder = services.AddResponsivenessCore();
-
-            return new ResponsivenessBuilder(builder.Services);
+            ResponsivenessServices.AddResponsivenessServices(builder.Services, setupAction);
+            return builder;
         }
     }
 }
