@@ -9,18 +9,18 @@ namespace Wangkanai.AspNetCore.Responsiveness.Devices
     public class DeviceManager : IDeviceManager
     {
         public IDevice CreateDesktopDevice()
-            => new DefaultDevice(DeviceType.Desktop);
+            => new DefaultDevice(DeviceTypes.Desktop);
 
         public IDevice CreateTabletDevice()
-            => new DefaultDevice(DeviceType.Tablet);
+            => new DefaultDevice(DeviceTypes.Tablet);
 
         public IDevice CreateMobileDevice()
-            => new DefaultDevice(DeviceType.Mobile);
+            => new DefaultDevice(DeviceTypes.Mobile);
 
         public IDevice CreateCrawlerDevice()
-            => new DefaultDevice(DeviceType.Crawler);
+            => new DefaultDevice(DeviceTypes.Crawler);
 
         public IDevice CreateOtherDevice(string code)
-            => new DefaultDevice(DeviceType.Other);
+            => new DefaultDevice(DeviceTypes.Other);
     }
 }

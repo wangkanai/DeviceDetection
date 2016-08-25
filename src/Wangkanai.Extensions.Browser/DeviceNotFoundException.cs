@@ -3,9 +3,8 @@ using System.Runtime.Serialization;
 
 namespace Wangkanai.Extensions.Browser
 {
-    [Serializable]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public class DeviceNotFoundException : ArgumentException, ISerializable
+    public class DeviceNotFoundException : ArgumentException
     {
         private string m_invalidDeviceName; // unrecognized device name
         private static string DefaultMessage => "Device Not Supported";
@@ -27,45 +26,21 @@ namespace Wangkanai.Extensions.Browser
 
         public DeviceNotFoundException() : base(DefaultMessage) { }
         public DeviceNotFoundException(string message) : base(message) { }
-
+        public DeviceNotFoundException(string paramName, string message)
+            : base(message, paramName) { }
         public DeviceNotFoundException(string message, Exception innerException)
+            : base(message, innerException) { }
+
+        public DeviceNotFoundException(string message, string invalidDeviceName, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-
-        public DeviceNotFoundException(string message, string invalidDeviceName, Exception innerException) :
-            base(message, innerException)
         {
             m_invalidDeviceName = invalidDeviceName;
         }
 
-#if NET451
-        protected DeviceNotFoundException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
+        public DeviceNotFoundException(string paramName, string invalidDeviceName, string message)
+            : base(message, paramName)
         {
-            m_invalidDeviceName = (string)info.GetValue("InvalidDeviceName", typeof(string));
+            m_invalidDeviceName = invalidDeviceName;
         }
-#else
-        protected DeviceNotFoundException(SerializationInfo info, StreamingContext context)
-        {
-            m_invalidDeviceName = (string) info.GetValue("InvalidDeviceName", typeof(string));
-        }
-#endif
-
-#if NET451
-        [System.Security.SecurityCritical]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            if(info == null) throw new ArgumentNullException("info");
-            base.GetObjectData(info, context);
-            info.AddValue("InvalidDeviceName", m_invalidDeviceName, typeof(string));
-        }
-#else
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            m_invalidDeviceName = (string)info.GetValue("InvalidDeviceName", typeof(string));
-        }
-#endif
     }
 }

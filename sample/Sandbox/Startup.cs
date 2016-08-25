@@ -56,9 +56,9 @@ namespace Sandbox
             {
                 SupportedDevices = new[]
                 {
-                    DeviceType.Desktop,
-                    DeviceType.Tablet,
-                    DeviceType.Mobile
+                    DeviceTypes.Desktop,
+                    DeviceTypes.Tablet,
+                    DeviceTypes.Mobile
                 }
             });
 

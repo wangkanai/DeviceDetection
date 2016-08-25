@@ -13,6 +13,6 @@ namespace Microsoft.AspNetCore.Builder
         {
             
         }
-        public IList<DeviceType> SupportedDevices { get; set; } = new List<DeviceType>();
+        public IList<DeviceTypes> SupportedDevices { get; set; } = new List<DeviceTypes>();
     }
 }

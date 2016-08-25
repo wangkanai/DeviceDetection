@@ -35,7 +35,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             var context = CreateUserAgent(value);
 
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Mobile);
+            var expected = new DefaultDevice(DeviceTypes.Mobile);
 
             // Act
             var device = resolver.Resolve(context);
@@ -55,7 +55,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             // Arrange            
             var context = CreateUserAgent(value);
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Mobile);
+            var expected = new DefaultDevice(DeviceTypes.Mobile);
 
             // Act
             var device = resolver.Resolve(context);
@@ -75,7 +75,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             var headerValue = "<xml><doc></doc>";
             context.Request.Headers.Add(header, new[] { headerValue });
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Mobile);
+            var expected = new DefaultDevice(DeviceTypes.Mobile);
 
             // Act
             var device = resolver.Resolve(context);
@@ -93,7 +93,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             var headerValue = "wap";
             context.Request.Headers.Add(header, new[] { headerValue });
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Mobile);
+            var expected = new DefaultDevice(DeviceTypes.Mobile);
 
             // Act
             var device = resolver.Resolve(context);
@@ -111,7 +111,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             var headerValue = "OperaMini";
             context.Request.Headers.Add(header, new[] { headerValue });
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Mobile);
+            var expected = new DefaultDevice(DeviceTypes.Mobile);
 
             // Act
             var device = resolver.Resolve(context);
@@ -130,7 +130,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             // Arrange            
             var context = CreateUserAgent(value);
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Tablet);
+            var expected = new DefaultDevice(DeviceTypes.Tablet);
 
             // Act
             var device = resolver.Resolve(context);
@@ -153,7 +153,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             // Arrange            
             var context = CreateUserAgent(value);
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Desktop);
+            var expected = new DefaultDevice(DeviceTypes.Desktop);
 
             // Act
             var device = resolver.Resolve(context);
@@ -172,7 +172,7 @@ namespace Wangkanai.AspNetCore.Responsiveness.Core.Test.Resolvers
             // Arrange            
             var context = CreateUserAgent(value);
             var resolver = CreateResolver();
-            var expected = new DefaultDevice(DeviceType.Crawler);
+            var expected = new DefaultDevice(DeviceTypes.Crawler);
 
             // Act
             var device = resolver.Resolve(context);
