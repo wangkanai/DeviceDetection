@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 using Wangkanai.AspNetCore.Responsiveness;
-using Wangkanai.Extensions.Responsiveness;
+using Wangkanai.Extensions.Browser;
 
 namespace Microsoft.AspNetCore.Builder
 {

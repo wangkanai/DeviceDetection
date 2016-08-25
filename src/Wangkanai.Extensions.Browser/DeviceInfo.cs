@@ -1,9 +1,9 @@
-﻿namespace Wangkanai.Extensions.Responsiveness
+﻿namespace Wangkanai.Extensions.Browser
 {
     public class DeviceInfo
     {
-        public virtual string Name { get; }
-        public virtual DeviceType Device { get; }
+        public string Name { get; }
+        public DeviceType Device { get; }
         public DeviceInfo(string name)
         {
             Name = name;

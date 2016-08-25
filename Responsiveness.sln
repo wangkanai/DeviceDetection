@@ -28,7 +28,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Respon
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Core.Test", "test\Wangkanai.AspNetCore.Responsiveness.Core.Test\Wangkanai.AspNetCore.Responsiveness.Core.Test.xproj", "{DEAE2297-2FB3-48AC-BCAD-58EF7894622F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Extensions.Responsiveness", "src\Wangkanai.Extensions.Responsiveness\Wangkanai.Extensions.Responsiveness.xproj", "{178C7E01-9834-4EC7-97C1-184C3837277D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Extensions.Browser", "src\Wangkanai.Extensions.Browser\Wangkanai.Extensions.Browser.xproj", "{178C7E01-9834-4EC7-97C1-184C3837277D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Wangkanai.Extensions.Responsiveness;
+using Wangkanai.Extensions.Browser;
 
 namespace Sandbox
 {

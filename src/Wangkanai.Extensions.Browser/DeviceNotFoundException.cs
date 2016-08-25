@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Wangkanai.Extensions.Responsiveness
+namespace Wangkanai.Extensions.Browser
 {
     [Serializable]
     [System.Runtime.InteropServices.ComVisible(true)]
