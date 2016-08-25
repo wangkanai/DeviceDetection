@@ -49,8 +49,8 @@ namespace Microsoft.Extensions.DependencyInjection
         internal static void AddResponsivenessServices(
             IServiceCollection services)
         {
-            // waiting for implimentation
-            services.TryAddSingleton<IResponsivenessManagerFactory, ResponsivenessManagerFactory>();
+            services.TryAddSingleton<IResponsivenessFactory, ResponsivenessFactory>();
+            services.TryAddTransient(typeof(IDeviceResolver),typeof(DeviceResolver));
         }
 
         internal static void AddResponsivenessServices(

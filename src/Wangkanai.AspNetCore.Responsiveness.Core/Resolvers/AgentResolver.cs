@@ -34,7 +34,12 @@ namespace Wangkanai.AspNetCore.Responsiveness.Resolvers
         }
         public IDevice Resolve(HttpContext context)
         {
-            foreach (var interpretor in PopulateUserAgents())
+            return Resolve(context, PopulateUserAgents());
+        }
+
+        private IDevice Resolve(HttpContext context, IList<IUserAgent> agents)
+        {
+            foreach (var interpretor in agents)
                 if (interpretor.Validate(context))
                     return interpretor.CreateDevice(_manager);
 
