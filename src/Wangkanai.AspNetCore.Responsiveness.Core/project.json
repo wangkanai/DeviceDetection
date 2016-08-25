@@ -3,7 +3,7 @@
   "version": "1.0.0-*",
   
   "authors": [ "Sarin Na Wangkanai (@wangkanai)" ],
-  "copyright": "Copyright © 2015 Sarin Na Wangkanai",
+  "copyright": "Copyright ï¿½ 2015 Sarin Na Wangkanai",
   "packOptions": {
     "repository": {
       "type": "git",
@@ -30,10 +30,13 @@
     "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Wangkanai.AspNetCore.Responsiveness.Abstractions": "1.0.0-*",
-    "Microsoft.AspNetCore.Hosting": "1.0.0"
+    "Microsoft.AspNetCore.Hosting": "1.0.0",
+    "Wangkanai.Extensions.Responsiveness": "1.0.0-*"
   },
   "frameworks": {
     "net451": {},
-    "netstandard1.6": {}
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
   }
 }
