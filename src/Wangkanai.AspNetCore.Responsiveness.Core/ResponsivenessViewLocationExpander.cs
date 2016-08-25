@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.Razor.Internal;
 using Wangkanai.Extensions.Responsiveness;
 
 namespace Wangkanai.AspNetCore.Responsiveness
