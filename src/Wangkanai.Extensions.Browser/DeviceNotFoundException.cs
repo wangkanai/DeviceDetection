@@ -36,10 +36,8 @@ namespace Wangkanai.Extensions.Browser
             {
                 var s = base.Message;
                 if (m_invalidDeviceName != null)
-                {
-                    var valueMessage = InvalidDeviceName;
-                    return s + Environment.NewLine + valueMessage;
-                }
+                    return s + Environment.NewLine + InvalidDeviceName;
+
                 return s;
             }
         }
