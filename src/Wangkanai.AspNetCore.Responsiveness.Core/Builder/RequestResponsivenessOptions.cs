@@ -1,8 +1,9 @@
-﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System.Collections.Generic;
 using Wangkanai.AspNetCore.Responsiveness;
+using Wangkanai.Extensions.Browser;
 
 namespace Microsoft.AspNetCore.Builder
 {
@@ -12,6 +13,6 @@ namespace Microsoft.AspNetCore.Builder
         {
             
         }
-        public IList<DeviceType> SupportedDevices { get; set; } = new List<DeviceType>();
+        public IList<DeviceTypes> SupportedDevices { get; set; } = new List<DeviceTypes>();
     }
 }

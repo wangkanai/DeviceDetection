@@ -1,22 +1,23 @@
-﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
+using Wangkanai.Extensions.Browser;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Devices
 {
     public class DefaultDevice : IDevice
     {
-        public bool IsDesktop => _deviceType == DeviceType.Desktop;
-        public bool IsTablet => _deviceType == DeviceType.Tablet;
-        public bool IsMobile => _deviceType == DeviceType.Mobile;
-        public bool IsCrawler => _deviceType == DeviceType.Crawler;
+        public bool IsDesktop => _deviceTypes == DeviceTypes.Desktop;
+        public bool IsTablet => _deviceTypes == DeviceTypes.Tablet;
+        public bool IsMobile => _deviceTypes == DeviceTypes.Mobile;
+        public bool IsCrawler => _deviceTypes == DeviceTypes.Crawler;
 
-        private readonly DeviceType _deviceType;
+        private readonly DeviceTypes _deviceTypes;
 
-        public DefaultDevice(DeviceType deviceType)
+        public DefaultDevice(DeviceTypes deviceTypes)
         {
-            _deviceType = deviceType;
+            _deviceTypes = deviceTypes;
         }
     }
 }

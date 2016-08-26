@@ -1,11 +1,10 @@
-﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.Razor.Internal;
-using Wangkanai.Extensions.Responsiveness;
+using Wangkanai.Extensions.Browser;
 
 namespace Wangkanai.AspNetCore.Responsiveness
 {

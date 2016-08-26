@@ -1,6 +1,6 @@
 # ASP.NET Core Responsiveness
 
-[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.AspNetCore.Responsiveness.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.AspNetCore.Responsiveness/)
+[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.AspNetCore.Responsiveness.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.AspNetCore.Responsiveness/) **Pre-Release** (Still in development)
 
 ![ASP.NET Core Responsiveness](https://raw.githubusercontent.com/wangkanai/Responsiveness/master/asp.net-core-responsiveness.png)
 

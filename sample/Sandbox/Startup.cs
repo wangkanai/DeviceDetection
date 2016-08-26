@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Wangkanai.AspNetCore.Responsiveness;
-using Wangkanai.AspNetCore.Responsiveness.Devices;
+using Wangkanai.Extensions.Browser;
 
 namespace Sandbox
 {
@@ -57,9 +56,9 @@ namespace Sandbox
             {
                 SupportedDevices = new[]
                 {
-                    DeviceType.Desktop,
-                    DeviceType.Tablet,
-                    DeviceType.Mobile
+                    DeviceTypes.Desktop,
+                    DeviceTypes.Tablet,
+                    DeviceTypes.Mobile
                 }
             });
 

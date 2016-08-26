@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -7,7 +10,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Wangkanai.Extensions.Responsiveness")]
+[assembly: AssemblyProduct("Wangkanai.Extensions.Browser.Test")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +19,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("178c7e01-9834-4ec7-97c1-184c3837277d")]
+[assembly: Guid("aeca4214-0584-4272-bc85-7b41593e5bc8")]

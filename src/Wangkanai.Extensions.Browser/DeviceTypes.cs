@@ -1,9 +1,12 @@
-﻿// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 // The GNU GPLv3. See License.txt in the project root for license information.
 
-namespace Wangkanai.AspNetCore.Responsiveness
+using System;
+
+namespace Wangkanai.Extensions.Browser
 {
-    public enum DeviceType
+    [Flags]
+    public enum DeviceTypes
     {
         Mobile,
         Tablet,

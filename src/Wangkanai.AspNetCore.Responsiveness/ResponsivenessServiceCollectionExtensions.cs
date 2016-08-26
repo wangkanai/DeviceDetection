@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.AspNetCore.Responsiveness;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions;
@@ -27,24 +30,25 @@ namespace Microsoft.Extensions.DependencyInjection
 
             return services;
         }
-        /// <summary>
-        /// Adds services required for application responsiveness.
-        /// </summary>
-        /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
-        /// <param name="setupAction">
-        /// An <see cref="Action{ResponsivenessOptions}"/> to configure the <see cref="ResponsivenessOptions"/></param>
-        /// <returns>The <see cref="IServiceCollection"/> sa that addidtional call be chained.</returns>
-        public static IServiceCollection AddResponsiveness(
-            this IServiceCollection services,
-            Action<ResponsivenessOptions> setupAction)
-        {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-            if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
 
-            AddResponsivenessServices(services, setupAction);
+        ///// <summary>
+        ///// Adds services required for application responsiveness.
+        ///// </summary>
+        ///// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
+        ///// <param name="setupAction">
+        ///// An <see cref="Action{ResponsivenessOptions}"/> to configure the <see cref="ResponsivenessOptions"/></param>
+        ///// <returns>The <see cref="IServiceCollection"/> sa that addidtional call be chained.</returns>
+        //public static IServiceCollection AddResponsiveness(
+        //    this IServiceCollection services,
+        //    Action<ResponsivenessOptions> setupAction)
+        //{
+        //    if (services == null) throw new ArgumentNullException(nameof(services));
+        //    if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
 
-            return services;
-        }
+        //    AddResponsivenessServices(services, setupAction);
+
+        //    return services;
+        //}
 
         internal static void AddResponsivenessServices(
             IServiceCollection services)
@@ -53,12 +57,12 @@ namespace Microsoft.Extensions.DependencyInjection
             services.TryAddTransient(typeof(IDeviceResolver),typeof(DeviceResolver));
         }
 
-        internal static void AddResponsivenessServices(
-            IServiceCollection services,
-            Action<ResponsivenessOptions> setAction)
-        {
-            AddResponsivenessServices(services);
-            services.Configure(setAction);
-        }
+        //internal static void AddResponsivenessServices(
+        //    IServiceCollection services,
+        //    Action<ResponsivenessOptions> setAction)
+        //{
+        //    AddResponsivenessServices(services);
+        //    services.Configure(setAction);
+        //}
     }
 }
