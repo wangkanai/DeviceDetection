@@ -1,15 +1,15 @@
 ﻿extensions: designer.cs generated.cs
 extensions: .cs .cpp .h
-// Copyright (c) 2015 Sarin Na Wangkanai, All Rights Reserved.
+// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 extensions: .aspx .ascx
 <%-- 
-Copyright (c) 2011 rubicon IT GmbH
+Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 --%>
 extensions: .vb
-'Sample license text.
+'Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 extensions:  .xml .config .xsd
 <!--
-Sample license text.
+Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
 -->
