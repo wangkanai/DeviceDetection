@@ -2,8 +2,8 @@
   "description": "ASP.NET Core Responsiveness abstractions and interfaces for invocation and dispatching",
   "version": "1.0.0-*",
 
-  "authors": [ "Sarin Na Wangkanai (@wangkanai)" ],
-  "copyright": "Copyright © 2015 Sarin Na Wangkanai",
+  "authors": [ "Sarin Na Wangkanai" ],
+  "copyright": "Copyright © 2016 Sarin Na Wangkanai",
   "packOptions": {
     "repository": {
       "type": "git",

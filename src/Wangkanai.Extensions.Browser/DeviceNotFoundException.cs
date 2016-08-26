@@ -2,7 +2,6 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
-using System.Runtime.Serialization;
 
 namespace Wangkanai.Extensions.Browser
 {
@@ -11,21 +10,7 @@ namespace Wangkanai.Extensions.Browser
     {
         private string m_invalidDeviceName; // unrecognized device name
         private static string DefaultMessage => "Device Not Supported";
-        public virtual string InvalidDeviceName => m_invalidDeviceName;
-        public override string Message
-        {
-            get
-            {
-                var s = base.Message;
-                if (m_invalidDeviceName != null)
-                {
-                    var valueMessage = InvalidDeviceName;
-                    if (s == null) return valueMessage;
-                    return s + Environment.NewLine + valueMessage;
-                }
-                return s;
-            }
-        }
+        public virtual string InvalidDeviceName => m_invalidDeviceName;        
 
         public DeviceNotFoundException() : base(DefaultMessage) { }
         public DeviceNotFoundException(string message) : base(message) { }
@@ -44,6 +29,20 @@ namespace Wangkanai.Extensions.Browser
             : base(message, paramName)
         {
             m_invalidDeviceName = invalidDeviceName;
+        }
+        public override string Message
+        {
+            get
+            {
+                var s = base.Message;
+                if (m_invalidDeviceName != null)
+                {
+                    var valueMessage = InvalidDeviceName;
+                    if (s == null) return valueMessage;
+                    return s + Environment.NewLine + valueMessage;
+                }
+                return s;
+            }
         }
     }
 }

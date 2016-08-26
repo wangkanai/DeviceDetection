@@ -2,8 +2,8 @@
   "description": "Wangkanai extension client browser detection components",
   "version": "1.0.0-*",
 
-  "authors": [ "Sarin Na Wangkanai (@wangkanai)" ],
-  "copyright": "Copyright � 2015 Sarin Na Wangkanai",
+  "authors": [ "Sarin Na Wangkanai" ],
+  "copyright": "Copyright © 2016 Sarin Na Wangkanai",
   "packOptions": {
     "repository": {
       "type": "git",
@@ -30,11 +30,6 @@
 
   "frameworks": {
     "net451": {},
-    "netstandard1.6": {
-      "dependencies": {
-        
-        "System.Runtime.Serialization.Formatters": "4.0.0-*"
-      }
-    }
+    "netstandard1.6": {}
   }
 }
