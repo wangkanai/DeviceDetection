@@ -8,16 +8,15 @@ namespace Wangkanai.Extensions.Browser.Platforms
 {
     internal class TabletBrowser : DeviceBrowser
     {
-        private readonly string[] _keywords = new string[]
-        {
+        private readonly string[] _keywords = {
             "tablet", "ipad", "playbook", "hp-tablet", "kindle"
         };
 
         public override bool IsValid(HttpRequest request)
         {
             var agent = request.Headers["User-Agent"].FirstOrDefault()?.ToLowerInvariant();
-            
-            if(agent == null) return false;
+
+            if (agent == null) return false;
             if (!_keywords.Any(k => agent.Contains(k))) return false;
             if (!agent.Contains("ipad") && agent.Contains("mobile")) return false;
 
