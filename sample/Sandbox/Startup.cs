@@ -52,15 +52,7 @@ namespace Sandbox
 
             app.UseStaticFiles();
 
-            app.UseResponsiveness(new RequestResponsivenessOptions
-            {
-                SupportedDevices = new[]
-                {
-                    DeviceTypes.Desktop,
-                    DeviceTypes.Tablet,
-                    DeviceTypes.Mobile
-                }
-            });
+            app.UseResponsiveness();
 
             app.UseMvc(routes =>
             {
