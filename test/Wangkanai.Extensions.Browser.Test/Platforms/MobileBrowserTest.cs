@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Xunit;
 
 namespace Wangkanai.Extensions.Browser.Platforms
 {
-    public class MobileBrowserTest
+    public class MobileBrowserTest : DeviceBrowserTest
     {
         [Theory]
         [InlineData("Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4")]
@@ -29,16 +28,6 @@ namespace Wangkanai.Extensions.Browser.Platforms
             var result = mobile.IsValid(request);
             // assert
             Assert.Equal(true, result);
-        }
-
-        private HttpRequest CreateRequest(string value)
-        {
-            var request = new DefaultHttpContext().Request;            
-            var header = "User-Agent";
-            var headerValue = value;
-            request.Headers.Add(header, new[] { headerValue });
-            
-            return request;
         }
     }
 }
