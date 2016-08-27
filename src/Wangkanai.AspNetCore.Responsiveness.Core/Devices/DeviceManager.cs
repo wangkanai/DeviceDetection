@@ -2,7 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
-using Wangkanai.Extensions.Browser;
+using Wangkanai.Extensions.BrowserDetection;
 
 namespace Wangkanai.AspNetCore.Responsiveness.Devices
 {

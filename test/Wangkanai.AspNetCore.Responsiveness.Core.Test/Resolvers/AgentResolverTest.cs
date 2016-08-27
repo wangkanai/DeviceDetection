@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 using Wangkanai.AspNetCore.Responsiveness.Devices;
 using Wangkanai.AspNetCore.Responsiveness.Resolvers;
-using Wangkanai.Extensions.Browser;
+using Wangkanai.Extensions.BrowserDetection;
 using Xunit;
 using Xunit.Abstractions;
 
