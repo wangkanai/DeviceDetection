@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Options;
-using Wangkanai.AspNetCore.Responsiveness.Abstractions.Devices;
 using Wangkanai.AspNetCore.Responsiveness.Internal;
 
 namespace Microsoft.AspNetCore.Builder
@@ -41,6 +40,6 @@ namespace Microsoft.AspNetCore.Builder
     public interface IResponsivenessBuilder
     {
         IApplicationBuilder ApplicationBuilder { get; }
-        IList<IDevice> SupportedDevices { get; }
+        //IList<IDevice> SupportedDevices { get; }
     }
 }
