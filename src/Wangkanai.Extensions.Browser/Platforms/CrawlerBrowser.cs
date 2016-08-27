@@ -16,6 +16,7 @@ namespace Wangkanai.Extensions.Browser.Platforms
             if (agent == null) return false;
             if (!_keywords.Any(keyword => agent.Contains(keyword))) return false;
 
+            DeviceInfo = DeviceBuilder.Crawler();
             return true;            
         }
     }

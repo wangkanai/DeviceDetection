@@ -7,8 +7,10 @@ namespace Wangkanai.Extensions.Browser.Platforms
 {
     internal abstract class DeviceBrowser : IDeviceBrowser
     {
+        public virtual DeviceInfo DeviceInfo { get; protected set; }
         public virtual bool IsValid(HttpRequest request)
         {
+            DeviceInfo = new DeviceInfo(DeviceTypes.Other);
             return false;
         }
     }

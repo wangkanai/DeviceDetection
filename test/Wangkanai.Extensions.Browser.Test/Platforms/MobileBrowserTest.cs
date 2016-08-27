@@ -23,7 +23,7 @@ namespace Wangkanai.Extensions.Browser.Platforms
         {
             // arrange 
             var request = CreateRequest(agents);
-            var mobile = new MobileBrowser();
+            var mobile = new MobileKeywordBrowser();
             // act
             var result = mobile.IsValid(request);
             // assert

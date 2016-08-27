@@ -12,7 +12,7 @@ namespace Wangkanai.Extensions.Browser
         public DeviceResolver(HttpRequest request)
         {
             _request = request;
-            Resolve();
+            DeviceInfo = Resolve();
         }
 
         private DeviceInfo Resolve()
@@ -21,12 +21,13 @@ namespace Wangkanai.Extensions.Browser
             {
                 new DesktopBrowser(),
                 new TabletBrowser(),
-                new MobileBrowser()
+                new MobileKeywordBrowser()
             };
             foreach (var browser in browsers)
                 if (browser.IsValid(_request))
-                    return new DeviceInfo("mobile");
-            return new DeviceInfo(DeviceTypes.Desktop);
+                    return DeviceBuilder.Mobile();
+
+            return DeviceBuilder.Desktop();
         }
     }
 }
