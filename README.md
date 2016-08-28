@@ -1,16 +1,16 @@
 # ASP.NET Core Responsiveness
 
-[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.AspNetCore.Responsiveness.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.AspNetCore.Responsiveness/) **Pre-Release** (Still in development)
+[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsiveness.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsiveness/) **Pre-Release** (Still in development)
 
 ![ASP.NET Core Responsiveness](https://raw.githubusercontent.com/wangkanai/Responsiveness/master/asset/asp.net-core-responsiveness.png)
 
 ASP.NET Core Responsiveness middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
 
-### Installation - [NuGet](https://www.nuget.org/packages/Wangkanai.AspNetCore.Responsiveness/)
+### Installation - [NuGet](https://www.nuget.org/packages/Wangkanai.Responsiveness/)
 
 ```powershell
-PM> install-package Wangkanai.AspNetCore.Responsiveness -pre
+PM> install-package Wangkanai.Responsiveness -pre
 ```
 ### Implement a strategy to select the device for each request
 #### Configuring Responsiveness

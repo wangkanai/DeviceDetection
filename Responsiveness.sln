@@ -16,17 +16,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{EB3816
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sandbox", "sample\Sandbox\Sandbox.xproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness", "src\Wangkanai.AspNetCore.Responsiveness\Wangkanai.AspNetCore.Responsiveness.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Core", "src\Wangkanai.AspNetCore.Responsiveness.Core\Wangkanai.AspNetCore.Responsiveness.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Abstractions", "src\Wangkanai.AspNetCore.Responsiveness.Abstractions\Wangkanai.AspNetCore.Responsiveness.Abstractions.xproj", "{FC774C4B-CC98-4964-83BD-3771F42A97BA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{79EB5806-00F0-4478-B35D-5CDC610D6770}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Test", "test\Wangkanai.AspNetCore.Responsiveness.Test\Wangkanai.AspNetCore.Responsiveness.Test.xproj", "{D5883029-78D8-481E-B632-97DEB9F82693}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsiveness", "src\Wangkanai.Responsiveness\Wangkanai.Responsiveness.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.AspNetCore.Responsiveness.Core.Test", "test\Wangkanai.AspNetCore.Responsiveness.Core.Test\Wangkanai.AspNetCore.Responsiveness.Core.Test.xproj", "{DEAE2297-2FB3-48AC-BCAD-58EF7894622F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsiveness.Abstractions", "src\Wangkanai.Responsiveness.Abstractions\Wangkanai.Responsiveness.Abstractions.xproj", "{FC774C4B-CC98-4964-83BD-3771F42A97BA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsiveness.Core", "src\Wangkanai.Responsiveness.Core\Wangkanai.Responsiveness.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsiveness.Test", "test\Wangkanai.Responsiveness.Test\Wangkanai.Responsiveness.Test.xproj", "{D5883029-78D8-481E-B632-97DEB9F82693}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsiveness.Core.Test", "test\Wangkanai.Responsiveness.Core.Test\Wangkanai.Responsiveness.Core.Test.xproj", "{DEAE2297-2FB3-48AC-BCAD-58EF7894622F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,14 +42,14 @@ Global
 		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC774C4B-CC98-4964-83BD-3771F42A97BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC774C4B-CC98-4964-83BD-3771F42A97BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC774C4B-CC98-4964-83BD-3771F42A97BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC774C4B-CC98-4964-83BD-3771F42A97BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079BF429-0174-4422-8CD7-62D0987E57C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,8 +65,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218} = {EB381681-9F43-4EBD-AA8B-6E591E169110}
 		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
-		{079BF429-0174-4422-8CD7-62D0987E57C3} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
 		{FC774C4B-CC98-4964-83BD-3771F42A97BA} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
+		{079BF429-0174-4422-8CD7-62D0987E57C3} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
 		{D5883029-78D8-481E-B632-97DEB9F82693} = {79EB5806-00F0-4478-B35D-5CDC610D6770}
 		{DEAE2297-2FB3-48AC-BCAD-58EF7894622F} = {79EB5806-00F0-4478-B35D-5CDC610D6770}
 	EndGlobalSection

@@ -20,7 +20,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "Wangkanai.AspNetCore.Responsiveness": "1.0.0-*"
+    "Wangkanai.Responsiveness": "1.0.0-*" 
   },
 
   "tools": {
