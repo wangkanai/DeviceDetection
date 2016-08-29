@@ -30,8 +30,8 @@ namespace Sandbox
         {
             services.AddResponsiveness();
             // Add framework services.
-            services.AddMvc()
-                .AddViewResponsiveness();
+            services.AddMvc();
+            //.AddViewResponsiveness();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,7 @@ namespace Sandbox
 
             app.UseStaticFiles();
 
-            app.UseResponsiveness();
+            //app.UseResponsiveness();
 
             app.UseMvc(routes =>
             {

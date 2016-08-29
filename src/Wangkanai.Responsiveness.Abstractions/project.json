@@ -25,7 +25,8 @@
     "xmlDoc": true
   },
   "dependencies": {
-    "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0"
+    "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0",
+    "Wangkanai.Browser": "1.0.0-beta1" 
   },
   "frameworks": {
     "net451": {},

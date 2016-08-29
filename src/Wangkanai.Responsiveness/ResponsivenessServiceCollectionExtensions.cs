@@ -25,7 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddOptions();
+            //services.AddOptions();
 
             AddResponsivenessServices(services);
 
@@ -55,7 +55,7 @@ namespace Microsoft.Extensions.DependencyInjection
             IServiceCollection services)
         {
             services.TryAddSingleton<IResponsivenessFactory, ResponsivenessFactory>();
-            services.TryAddTransient(typeof(IDeviceResolver),typeof(DeviceResolver));
+            services.TryAddTransient(typeof(IResponsivenessResolver),typeof(ResponsivenessResolver));
         }
 
         //internal static void AddResponsivenessServices(
