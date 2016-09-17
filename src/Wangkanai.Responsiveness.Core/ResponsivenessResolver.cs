@@ -11,14 +11,14 @@ namespace Wangkanai.Responsiveness
     public class ResponsivenessResolver : IResponsivenessResolver
     {
         private ResponsivenessFactory _factory;
-        public DeviceInfo DeviceInfo { get; private set; }       
+        //public DeviceInfo DeviceInfo { get; private set; }       
 
         public ResponsivenessResolver(ResponsivenessFactory factory, HttpContext context)
         {
             if(factory == null) throw new ArgumentNullException(nameof(factory));
 
             _factory = factory;            
-            DeviceInfo = new DeviceResolver(context.Request).DeviceInfo;
+            //DeviceInfo = new DeviceResolver(context.Request).DeviceInfo;
         }
     }
 }

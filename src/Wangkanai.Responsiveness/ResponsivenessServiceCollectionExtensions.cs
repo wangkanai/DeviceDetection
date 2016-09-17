@@ -20,50 +20,15 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public static IServiceCollection AddResponsiveness(
+        public static IResponsivenessBuilder AddResponsiveness(
             this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            //services.AddOptions();
-
-            AddResponsivenessServices(services);
-
-            return services;
-        }
-
-        ///// <summary>
-        ///// Adds services required for application responsiveness.
-        ///// </summary>
-        ///// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
-        ///// <param name="setupAction">
-        ///// An <see cref="Action{ResponsivenessOptions}"/> to configure the <see cref="ResponsivenessOptions"/></param>
-        ///// <returns>The <see cref="IServiceCollection"/> sa that addidtional call be chained.</returns>
-        //public static IServiceCollection AddResponsiveness(
-        //    this IServiceCollection services,
-        //    Action<ResponsivenessOptions> setupAction)
-        //{
-        //    if (services == null) throw new ArgumentNullException(nameof(services));
-        //    if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
-
-        //    AddResponsivenessServices(services, setupAction);
-
-        //    return services;
-        //}
-
-        internal static void AddResponsivenessServices(
-            IServiceCollection services)
-        {
             services.TryAddSingleton<IResponsivenessFactory, ResponsivenessFactory>();
-            services.TryAddTransient(typeof(IResponsivenessResolver),typeof(ResponsivenessResolver));
-        }
+            services.TryAddTransient(typeof(IResponsivenessResolver), typeof(ResponsivenessResolver));
 
-        //internal static void AddResponsivenessServices(
-        //    IServiceCollection services,
-        //    Action<ResponsivenessOptions> setAction)
-        //{
-        //    AddResponsivenessServices(services);
-        //    services.Configure(setAction);
-        //}
+            return new ResponsivenessBuilder(services);
+        }
     }
 }

@@ -9,16 +9,16 @@ namespace Sandbox.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ResponsivenessResolver _resolver;
+        //private readonly ResponsivenessResolver _resolver;
 
-        public HomeController(ResponsivenessResolver resolver)
-        {
-            this._resolver = resolver;
-        }
+        //public HomeController(ResponsivenessResolver resolver)
+        //{
+        //    this._resolver = resolver;
+        //}
 
         public IActionResult Index()
-        {            
-            return View(_resolver.DeviceInfo);
+        {
+            return View();//_resolver.DeviceInfo);
         }
 
         public IActionResult Error()

@@ -19,8 +19,8 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         /// <param name="builder">The <see cref="IMvcBuilder"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
-        public static IMvcBuilder AddViewResponsiveness(
-            this IMvcBuilder builder)
+        public static IResponsivenessBuilder AddViewResponsiveness(
+            this IResponsivenessBuilder builder)
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
 
@@ -32,8 +32,8 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="builder">the <see cref="IMvcBuilder"/>.</param>
         /// <param name="setupAction">An action to configure the <see cref="ViewResponsivenessOptions"/>.</param>
         /// <returns>The <see cref="IMvcBuilder"/>.</returns>
-        public static IMvcBuilder AddViewResponsiveness(
-            this IMvcBuilder builder,
+        public static IResponsivenessBuilder AddViewResponsiveness(
+            this IResponsivenessBuilder builder,
             Action<ViewResponsivenessOptions> setupAction)
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));

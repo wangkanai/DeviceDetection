@@ -58,30 +58,30 @@ namespace Wangkanai.Responsiveness
 
             if (!string.IsNullOrEmpty(value))
             {
-                DeviceInfo device;
+                //DeviceInfo device;
                 try
                 {
-                    device = new DeviceInfo(value);
+                    //device = new DeviceInfo(value);
                 }
                 catch (DeviceNotFoundException)
                 {
                     return viewLocations;
                 }
 
-                return ExpandViewLocationsCore(viewLocations, device);
+                return ExpandViewLocationsCore(viewLocations, "device");
             }
 
             return viewLocations;
         }
 
-        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, DeviceInfo deviceinfo)
+        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, string deviceinfo)
         {
             foreach (var location in viewLocations)
             {
                 if (_format == ResponsivenessViewLocationExpanderFormat.Area)
-                    yield return location.Replace("{0}", deviceinfo.Name + "/{0}");
+                    yield return location.Replace("{0}", deviceinfo + "/{0}");
                 else
-                    yield return location.Replace("{0}", "{0}." + deviceinfo.Name);
+                    yield return location.Replace("{0}", "{0}." + deviceinfo);
 
                 yield return location;
             }
