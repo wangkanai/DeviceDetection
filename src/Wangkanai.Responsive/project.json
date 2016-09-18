@@ -3,7 +3,7 @@
   "version": "1.0.0-beta1",
 
   "authors": [ "Sarin Na Wangkanai" ],
-  "copyright": "Copyright � 2016 Sarin Na Wangkanai",
+  "copyright": "Copyright © 2016 Sarin Na Wangkanai",
   "packOptions": {
     "repository": {
       "type": "git",
