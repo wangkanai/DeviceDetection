@@ -1,39 +1,39 @@
-# ASP.NET Core Responsiveness
+# ASP.NET Core Responsive
 
-[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/responsiveness/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsiveness.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsiveness/) **Pre-Release** (Still in development)
+[![Build status](https://ci.appveyor.com/api/projects/status/nkka5uy27pje40ra/branch/master?svg=true)](https://ci.appveyor.com/project/wangkanai/Responsive/branch/master) [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsive.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsive/) **Pre-Release** (Still in development)
 
-![ASP.NET Core Responsiveness](https://raw.githubusercontent.com/wangkanai/Responsiveness/master/asset/asp.net-core-responsiveness.png)
+![ASP.NET Core Responsive](https://raw.githubusercontent.com/wangkanai/Responsive/master/asset/asp.net-core-Responsive.png)
 
-ASP.NET Core Responsiveness middleware for routing base upon request client device detection to specific view.
+ASP.NET Core Responsive middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
 
-### Installation - [NuGet](https://www.nuget.org/packages/Wangkanai.Responsiveness/)
+### Installation - [NuGet](https://www.nuget.org/packages/Wangkanai.Responsive/)
 
 ```powershell
-PM> install-package Wangkanai.Responsiveness -pre
+PM> install-package Wangkanai.Responsive -pre
 ```
 ### Implement a strategy to select the device for each request
-#### Configuring Responsiveness
-Responsiveness is configured in the `ConfigureServices` method:
+#### Configuring Responsive
+Responsive is configured in the `ConfigureServices` method:
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddResponsiveness();
+    services.AddResponsive();
     // Add framework services.
     services.AddMvc()
-        .AddViewResponsiveness();    
+        .AddViewResponsive();    
 }
 ```
-* `AddResponsiveness` Adds the responsiveness services to the services container.
-* `AddViewResponsiveness` Adds support for device view files. In this sample view responsiveness is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
+* `AddResponsive` Adds the Responsive services to the services container.
+* `AddViewResponsive` Adds support for device view files. In this sample view Responsive is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
 
-#### Responsiveness Middleware
+#### Responsive Middleware
 
-The current device on a request is set in the responsiveness middleware. The responsiveness middleware is enabled in the `Configure` method of *Startup.cs* file.
+The current device on a request is set in the Responsive middleware. The Responsive middleware is enabled in the `Configure` method of *Startup.cs* file.
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 {
-    app.UseResponsiveness(new RequestResponsivenessOptions{
+    app.UseResponsive(new RequestResponsiveOptions{
         SupportedDevices = new[]
         {
             DeviceType.Desktop,

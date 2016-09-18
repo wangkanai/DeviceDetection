@@ -6,7 +6,7 @@
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "Moq": "4.6.25-*",
     "Microsoft.AspNetCore.Http": "1.0.0",
-    "Wangkanai.Responsiveness.Core": "1.0.0-*"
+    "Wangkanai.Responsive.Core": "1.0.0-*"
   },
   "testRunner": "xunit",
   "frameworks": {

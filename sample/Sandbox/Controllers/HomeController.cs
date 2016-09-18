@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Wangkanai.Responsiveness;
+using Wangkanai.Responsive;
 
 namespace Sandbox.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ResponsivenessResolver _resolver;
+        //private readonly ResponsiveResolver _resolver;
 
-        //public HomeController(ResponsivenessResolver resolver)
+        //public HomeController(ResponsiveResolver resolver)
         //{
         //    this._resolver = resolver;
         //}
