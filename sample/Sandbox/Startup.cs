@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Wangkanai.Responsive.Builder;
+using Wangkanai.Responsive;
 
 namespace Sandbox
 {
@@ -28,8 +28,7 @@ namespace Sandbox
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddResponsive()
-                .AddViewResponsive();
+            services.AddResponsive();
             // Add framework services.
             services.AddMvc();
             //.AddViewResponsive();
@@ -53,7 +52,7 @@ namespace Sandbox
 
             app.UseStaticFiles();
 
-            //app.UseResponsive();
+            app.UseResponsive();
 
             app.UseMvc(routes =>
             {

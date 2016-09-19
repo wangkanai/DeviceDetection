@@ -3,8 +3,7 @@
 
 namespace Wangkanai.Responsive
 {
-    public class ResponsiveOptions
+    public class ResponsiveMiddleware
     {
-        
     }
 }

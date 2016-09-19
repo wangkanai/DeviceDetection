@@ -9,16 +9,14 @@ using Wangkanai.Responsive.Abstractions;
 namespace Wangkanai.Responsive
 {
     public class ResponsiveResolver : IResponsiveResolver
-    {
-        private ResponsiveFactory _factory;
-        //public DeviceInfo DeviceInfo { get; private set; }       
+    {        
+        private IClientInfo _clientInfo;    
 
-        public ResponsiveResolver(ResponsiveFactory factory, HttpContext context)
+        public ResponsiveResolver(IClientInfo clientInfo)
         {
-            if(factory == null) throw new ArgumentNullException(nameof(factory));
-
-            _factory = factory;            
-            //DeviceInfo = new DeviceResolver(context.Request).DeviceInfo;
+            if(clientInfo == null) throw new ArgumentNullException(nameof(clientInfo));
+            
+            _clientInfo = clientInfo;
         }
     }
 }

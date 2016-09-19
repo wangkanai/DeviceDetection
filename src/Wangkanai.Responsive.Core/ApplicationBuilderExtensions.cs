@@ -3,9 +3,8 @@
 
 using System;
 using Microsoft.AspNetCore.Builder;
-using Wangkanai.Responsive.Internal;
 
-namespace Wangkanai.Responsive.Builder
+namespace Wangkanai.Responsive
 {
     /// <summary>
     /// Extension methods for adding the <see cref="ResponsiveMiddleware"/> to an application.

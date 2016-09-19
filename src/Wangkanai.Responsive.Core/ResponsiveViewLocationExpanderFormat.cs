@@ -8,10 +8,7 @@ namespace Wangkanai.Responsive
     /// </summary>
     public enum ResponsiveViewLocationExpanderFormat
     {
-        /// <summary>
-        /// Locate is
-        /// </summary>
-        Area,
+        Subfolder,
         Suffix
     }
 }
