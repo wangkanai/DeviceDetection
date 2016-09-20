@@ -23,17 +23,17 @@ namespace Wangkanai.Responsive
     public class ResponsiveViewLocationExpander : IViewLocationExpander
     {
         private const string ValueKey = "Device";
-        private readonly IClientInfo _client;
+        private readonly IDeviceResolver _resolver;
         private readonly ResponsiveViewLocationExpanderFormat _format;
 
         /// <summary>
         /// Instantiates a new <see cref="ResponsiveViewLocationExpander"/> instance.
         /// </summary>
-        /// <param name="client">The <see cref="IClientInfo"/>.</param>
+        /// <param name="resolver">The <see cref="IDeviceResolver"/>.</param>
         /// <param name="format">The <see cref="ResponsiveViewLocationExpanderFormat"/>.</param>
-        public ResponsiveViewLocationExpander(IClientInfo client, ResponsiveViewLocationExpanderFormat format)
+        public ResponsiveViewLocationExpander(IDeviceResolver resolver, ResponsiveViewLocationExpanderFormat format)
         {
-            _client = client;
+            _resolver = resolver;
             _format = format;
         }
 
@@ -41,7 +41,7 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            context.Values[ValueKey] = _client.Device.Type.ToString();
+            context.Values[ValueKey] = _resolver.Device.Type.ToString();
         }
 
         public IEnumerable<string> ExpandViewLocations(
@@ -59,7 +59,7 @@ namespace Wangkanai.Responsive
                 Device device;
                 try
                 {
-                    device = new Device(); //value); waiting browser beta3
+                    device = _resolver.Device; //value); waiting browser beta3
                 }
                 catch (DeviceNotFoundException)
                 {
