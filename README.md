@@ -53,5 +53,5 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 #### Related projects
 
-* [ASP.NET Core Browser (Wangkanai.Browser)](https://github.com/wangkanai/Browser)
+* [ASP.NET Core Detection (Wangkanai.Detection)](https://github.com/wangkanai/Detection)
 
