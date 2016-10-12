@@ -24,8 +24,7 @@ public void ConfigureServices(IServiceCollection services)
         .AddViewLocation();
 
     // Add framework services.
-    services.AddMvc()
-        .AddViewResponsive();    
+    services.AddMvc();  
 }
 ```
 * `AddResponsive` Adds the Responsive services to the services container.
