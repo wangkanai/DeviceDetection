@@ -5,7 +5,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.Responsive;
 using Wangkanai.Responsive.Abstractions;
-using Wangkanai.Browser;
+using Wangkanai.Detection;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -26,7 +26,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddClientService().AddDevice();
+            services.AddDetection().AddDevice();
             //services.TryAddSingleton<IResponsiveFactory, ResponsiveFactory>();
             services.TryAddTransient(typeof(IResponsiveResolver), typeof(ResponsiveResolver));
 

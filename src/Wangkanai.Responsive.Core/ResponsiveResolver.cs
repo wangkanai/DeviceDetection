@@ -10,13 +10,13 @@ namespace Wangkanai.Responsive
 {
     public class ResponsiveResolver : IResponsiveResolver
     {        
-        private IClientInfo _clientInfo;    
+        private IDeviceResolver _deviceResolver;    
 
-        public ResponsiveResolver(IClientInfo clientInfo)
+        public ResponsiveResolver(IDeviceResolver deviceResolver)
         {
-            if(clientInfo == null) throw new ArgumentNullException(nameof(clientInfo));
-            
-            _clientInfo = clientInfo;
+            if(deviceResolver == null) throw new ArgumentNullException(nameof(deviceResolver));
+
+            _deviceResolver = deviceResolver;
         }
     }
 }

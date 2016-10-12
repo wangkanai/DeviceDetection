@@ -30,7 +30,7 @@
     "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.0",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.AspNetCore.Hosting": "1.0.0",
-    "Wangkanai.Browser": "1.0.0-beta3",
+    "Wangkanai.Detection.Device": "1.0.0-beta4",
     "Wangkanai.Responsive.Abstractions": "1.0.0-*"
   },
   "frameworks": {
