@@ -16,17 +16,17 @@ namespace Wangkanai.Responsive
         {
             if(app == null) throw new ArgumentNullException(nameof(app));
 
-            return app.UseResponsive(options => { });
+            return app.UseMiddleware<ResponsiveMiddleware>();
         }
 
         public static IApplicationBuilder UseResponsive(
             this IApplicationBuilder app,
-            Action<IResponsiveBuilder> options)
+            ResponsiveOptions options)
         {
             if(app == null) throw new ArgumentNullException(nameof(app));
             if(options==null) throw new ArgumentNullException(nameof(options));
 
-            return app.UseMiddleware<ResponsiveMiddleware>();
+            return app.UseMiddleware<ResponsiveMiddleware>(options);
         }
     }
 }
