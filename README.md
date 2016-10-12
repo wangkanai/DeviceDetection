@@ -19,14 +19,17 @@ Responsive is configured in the `ConfigureServices` method:
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddResponsive();
+    // Add responsive services.
+    services.AddResponsive()
+        .AddViewLocation();
+
     // Add framework services.
     services.AddMvc()
         .AddViewResponsive();    
 }
 ```
 * `AddResponsive` Adds the Responsive services to the services container.
-* `AddViewResponsive` Adds support for device view files. In this sample view Responsive is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
+* `AddViewLocation` Adds support for device view files. In this sample view Responsive is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
 
 #### Responsive Middleware
 

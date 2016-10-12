@@ -29,15 +29,4 @@ namespace Wangkanai.Responsive
             return app.UseMiddleware<ResponsiveMiddleware>();
         }
     }
-
-    public class ResponsiveBuilder
-    {
-        
-    }
-
-    public interface IResponsiveBuilder
-    {
-        IApplicationBuilder ApplicationBuilder { get; }
-        //IList<IDevice> SupportedDevices { get; }
-    }
 }
