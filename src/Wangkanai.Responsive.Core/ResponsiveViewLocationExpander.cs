@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Wangkanai.Browser;
+using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
@@ -56,7 +56,7 @@ namespace Wangkanai.Responsive
 
             if (!string.IsNullOrEmpty(value))
             {
-                Device device;
+                IDevice device;
                 try
                 {
                     device = _resolver.Device; //value); waiting browser beta3
@@ -72,7 +72,7 @@ namespace Wangkanai.Responsive
             return viewLocations;
         }
 
-        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, Device device)
+        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, IDevice device)
         {
             foreach (var location in viewLocations)
             {

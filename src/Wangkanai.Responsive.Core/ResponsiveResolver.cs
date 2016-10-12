@@ -3,7 +3,7 @@
 
 using System;
 using Microsoft.AspNetCore.Http;
-using Wangkanai.Browser;
+using Wangkanai.Detection;
 using Wangkanai.Responsive.Abstractions;
 
 namespace Wangkanai.Responsive
