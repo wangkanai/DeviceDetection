@@ -2,6 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.Responsive;
 using Wangkanai.Responsive.Abstractions;
@@ -27,9 +28,14 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddDetection().AddDevice();
-            //services.TryAddSingleton<IResponsiveFactory, ResponsiveFactory>();
+            services.AddDetection().AddDevice();            
             services.TryAddTransient(typeof(IResponsiveResolver), typeof(ResponsiveResolver));
+            var format = ResponsiveViewLocationExpanderFormat.Suffix;
+            services.Configure<RazorViewEngineOptions>(
+                options =>
+                {
+                    options.ViewLocationExpanders.Add(new ResponsiveViewLocationExpander(format));
+                });
 
             return new ResponsiveBuilder(services);
         }
