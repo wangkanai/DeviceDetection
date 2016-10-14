@@ -30,12 +30,6 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddDetection().AddDevice();            
             services.TryAddTransient(typeof(IResponsiveResolver), typeof(ResponsiveResolver));
-            var format = ResponsiveViewLocationExpanderFormat.Suffix;
-            services.Configure<RazorViewEngineOptions>(
-                options =>
-                {
-                    options.ViewLocationExpanders.Add(new ResponsiveViewLocationExpander(format));
-                });
 
             return new ResponsiveBuilder(services);
         }

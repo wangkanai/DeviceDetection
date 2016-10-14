@@ -29,11 +29,11 @@ namespace Sandbox
         public void ConfigureServices(IServiceCollection services)
         {
             // Add responsive services.
-            services.AddResponsive();
+            services.AddResponsive()
+                .AddViewLocation();
 
             // Add framework services.
-            services.AddMvc();
-            
+            services.AddMvc();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

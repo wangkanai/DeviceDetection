@@ -20,7 +20,8 @@ Responsive is configured in the `ConfigureServices` method:
 public void ConfigureServices(IServiceCollection services)
 {
     // Add responsive services.
-    services.AddResponsive();
+    services.AddResponsive()
+        .AddViewLocation();
 
     // Add framework services.
     services.AddMvc();  
