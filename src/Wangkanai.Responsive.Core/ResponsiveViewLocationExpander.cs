@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.Options;
 using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
@@ -22,17 +23,16 @@ namespace Wangkanai.Responsive
     /// </example>
     public class ResponsiveViewLocationExpander : IViewLocationExpander
     {
-        private const string ValueKey = "Device";
-        //private readonly IDeviceResolver _resolver;
+        private const string DEVICE_KEY = "device";             
         private readonly ResponsiveViewLocationExpanderFormat _format;
 
-        /// <summary>
-        /// Instantiates a new <see cref="ResponsiveViewLocationExpander"/> instance.
-        /// </summary>        
-        /// <param name="format">The <see cref="ResponsiveViewLocationExpanderFormat"/>.</param>
-        public ResponsiveViewLocationExpander(ResponsiveViewLocationExpanderFormat format)
+        public ResponsiveViewLocationExpander()
+            : this(ResponsiveViewLocationExpanderFormat.Suffix)
         {
-            //_resolver = resolver;
+            
+        }
+        public ResponsiveViewLocationExpander(ResponsiveViewLocationExpanderFormat format)
+        {            
             _format = format;
         }
 
@@ -40,7 +40,8 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            context.Values[ValueKey] = "mobile";// _resolver.Device.Type.ToString();
+            context.Values[DEVICE_KEY] = "mobile"; //_resolver.Device.Type.ToString();
+            //context.ActionContext.HttpContext.RequestServices.GetService(typeof(IDeviceResolver));
         }
 
         public IEnumerable<string> ExpandViewLocations(
@@ -51,14 +52,14 @@ namespace Wangkanai.Responsive
             if (viewLocations == null) throw new ArgumentNullException(nameof(viewLocations));
 
             string value;
-            context.Values.TryGetValue(ValueKey, out value);
+            context.Values.TryGetValue(DEVICE_KEY, out value);
 
             if (!string.IsNullOrEmpty(value))
             {
-                string device;
+                IDevice device;
                 try
                 {
-                    device = value; //waiting browser beta3
+                    device = new Device(value); //waiting browser beta3
                 }
                 catch (DeviceNotFoundException)
                 {
@@ -71,14 +72,14 @@ namespace Wangkanai.Responsive
             return viewLocations;
         }
 
-        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, string device)
+        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, IDevice device)
         {
             foreach (var location in viewLocations)
             {
                 if (_format == ResponsiveViewLocationExpanderFormat.Subfolder)
-                    yield return location.Replace("{0}", device + "/{0}");
+                    yield return location.Replace("{0}", device.Type.ToString() + "/{0}");
                 else
-                    yield return location.Replace("{0}", "{0}." + device);
+                    yield return location.Replace("{0}", "{0}." + device.Type.ToString());
 
                 yield return location;
             }

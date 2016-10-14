@@ -1,6 +1,7 @@
 ﻿
 using System;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.Detection;
 using Wangkanai.Responsive;
 
@@ -20,10 +21,15 @@ namespace Microsoft.Extensions.DependencyInjection
             this IResponsiveBuilder builder,
             ResponsiveViewLocationExpanderFormat format)
         {
+            //Action<ResponsiveViewOptions> viewOptions = options => options.Format = format;
+            //builder.Services.Configure(viewOptions);
+            //builder.Services.TryAddTransient<ResponsiveViewLocationExpander>();
+
             builder.Services.Configure<RazorViewEngineOptions>(
                 options =>
                 {
                     options.ViewLocationExpanders.Add(new ResponsiveViewLocationExpander(format));
+                    //builder.Services.BuildServiceProvider().GetService<ResponsiveViewLocationExpander>());
                 });
 
             return builder;

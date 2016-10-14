@@ -4,11 +4,11 @@ namespace Wangkanai.Responsive
 {
     public class ResponsiveOptions
     {
-        public IDevice DefaultRequestDevice { get; set; }
+        public IDevice DefaultRequestDevice { get; set; }        
+    }
 
-        public ResponsiveOptions()
-        {
-            
-        }
+    public class ResponsiveViewOptions
+    {
+        public ResponsiveViewLocationExpanderFormat Format { get; set; } = ResponsiveViewLocationExpanderFormat.Suffix;
     }
 }
