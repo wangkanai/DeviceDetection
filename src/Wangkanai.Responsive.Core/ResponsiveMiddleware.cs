@@ -4,21 +4,22 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace Wangkanai.Responsive
 {
     public class ResponsiveMiddleware
     {
         private readonly RequestDelegate _next;
-        //private readonly ResponsiveOptions _options;
+        private readonly ResponsiveOptions _options;
 
-        public ResponsiveMiddleware(RequestDelegate next)//, ResponsiveOptions options)
+        public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
         {
             if(next ==null) throw new ArgumentNullException(nameof(next));
-            //if(options ==null) throw new ArgumentNullException(nameof(options));
+            if(options ==null) throw new ArgumentNullException(nameof(options));
 
             _next = next;
-            //_options = options;
+            _options = options.Value;
         }
 
         public async Task Invoke(HttpContext context)

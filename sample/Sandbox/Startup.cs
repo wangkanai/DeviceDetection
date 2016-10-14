@@ -29,8 +29,7 @@ namespace Sandbox
         public void ConfigureServices(IServiceCollection services)
         {
             // Add responsive services.
-            services.AddResponsive()
-                .AddViewLocation();
+            services.AddResponsive();
 
             // Add framework services.
             services.AddMvc();
