@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
 using Wangkanai.Detection;
@@ -42,6 +43,7 @@ namespace Wangkanai.Responsive
 
             context.Values[DEVICE_KEY] = "mobile"; //_resolver.Device.Type.ToString();
             //context.ActionContext.HttpContext.RequestServices.GetService(typeof(IDeviceResolver));
+            context.ActionContext.HttpContext.Responsive();
         }
 
         public IEnumerable<string> ExpandViewLocations(
