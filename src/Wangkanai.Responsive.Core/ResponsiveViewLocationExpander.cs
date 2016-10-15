@@ -41,9 +41,7 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            context.Values[DEVICE_KEY] = "mobile"; //_resolver.Device.Type.ToString();
-            //context.ActionContext.HttpContext.RequestServices.GetService(typeof(IDeviceResolver));
-            context.ActionContext.HttpContext.Responsive();
+            context.Values[DEVICE_KEY] = context.ActionContext.HttpContext.GetDevice().Device;
         }
 
         public IEnumerable<string> ExpandViewLocations(

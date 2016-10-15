@@ -26,7 +26,8 @@ namespace Wangkanai.Responsive
         {
             if(context == null) throw new ArgumentNullException(nameof(context));
 
-            //var requestdevice = _options.DefaultRequestDevice;
+            var perference=new UserPerference() {Device = "mobile"};
+            context.SetDevice(perference);
 
             await _next(context);
         }
