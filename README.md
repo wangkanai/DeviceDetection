@@ -21,7 +21,8 @@ public void ConfigureServices(IServiceCollection services)
 {
     // Add responsive services.
     services.AddResponsive()
-        .AddViewSuffix();
+        .AddViewSuffix()
+        .AddViewSubfolder();
 
     // Add framework services.
     services.AddMvc();  
