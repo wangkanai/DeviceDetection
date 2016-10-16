@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
+using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
@@ -12,13 +13,16 @@ namespace Wangkanai.Responsive
     {
         private readonly RequestDelegate _next;
         private readonly ResponsiveOptions _options;
+        private readonly IDeviceResolver _resolver;
 
-        public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
+        public ResponsiveMiddleware(RequestDelegate next, IDeviceResolver resolver, IOptions<ResponsiveOptions> options)
         {
             if (next == null) throw new ArgumentNullException(nameof(next));
+            if (resolver == null) throw new ArgumentNullException(nameof(resolver));
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             _next = next;
+            _resolver = resolver;
             _options = options.Value;
         }
 
@@ -26,7 +30,7 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var perference = new UserPerference() { Device = "mobile" };
+            var perference = new UserPerference() { Device = _resolver.Device.Type.ToString() };
             context.SetDevice(perference);
 
             await _next(context);

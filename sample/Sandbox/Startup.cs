@@ -30,7 +30,7 @@ namespace Sandbox
         {
             // Add responsive services.
             services.AddResponsive()
-                .AddViewLocation();
+                .AddViewSuffix();
 
             // Add framework services.
             services.AddMvc();            

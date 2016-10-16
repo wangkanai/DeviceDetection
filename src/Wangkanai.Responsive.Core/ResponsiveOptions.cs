@@ -9,9 +9,4 @@ namespace Wangkanai.Responsive
     {
         public IDevice DefaultRequestDevice { get; set; }
     }
-
-    public class ResponsiveViewOptions
-    {
-        public ResponsiveViewLocationFormat Format { get; set; } = ResponsiveViewLocationFormat.Suffix;
-    }
 }
