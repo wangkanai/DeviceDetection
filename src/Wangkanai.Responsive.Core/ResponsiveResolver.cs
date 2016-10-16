@@ -9,12 +9,12 @@ using Wangkanai.Responsive.Abstractions;
 namespace Wangkanai.Responsive
 {
     public class ResponsiveResolver : IResponsiveResolver
-    {        
-        private IDeviceResolver _deviceResolver;    
+    {
+        private IDeviceResolver _deviceResolver;
 
         public ResponsiveResolver(IDeviceResolver deviceResolver)
         {
-            if(deviceResolver == null) throw new ArgumentNullException(nameof(deviceResolver));
+            if (deviceResolver == null) throw new ArgumentNullException(nameof(deviceResolver));
 
             _deviceResolver = deviceResolver;
         }

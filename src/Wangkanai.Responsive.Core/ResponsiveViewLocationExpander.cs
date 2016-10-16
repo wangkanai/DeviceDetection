@@ -24,16 +24,16 @@ namespace Wangkanai.Responsive
     /// </example>
     public class ResponsiveViewLocationExpander : IViewLocationExpander
     {
-        private const string DEVICE_KEY = "device";             
+        private const string DEVICE_KEY = "device";
         private readonly ResponsiveViewLocationExpanderFormat _format;
 
         public ResponsiveViewLocationExpander()
             : this(ResponsiveViewLocationExpanderFormat.Suffix)
         {
-            
+
         }
         public ResponsiveViewLocationExpander(ResponsiveViewLocationExpanderFormat format)
-        {            
+        {
             _format = format;
         }
 

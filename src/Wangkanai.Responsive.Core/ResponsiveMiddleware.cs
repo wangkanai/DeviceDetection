@@ -15,8 +15,8 @@ namespace Wangkanai.Responsive
 
         public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
         {
-            if(next ==null) throw new ArgumentNullException(nameof(next));
-            if(options ==null) throw new ArgumentNullException(nameof(options));
+            if (next == null) throw new ArgumentNullException(nameof(next));
+            if (options == null) throw new ArgumentNullException(nameof(options));
 
             _next = next;
             _options = options.Value;
@@ -24,9 +24,9 @@ namespace Wangkanai.Responsive
 
         public async Task Invoke(HttpContext context)
         {
-            if(context == null) throw new ArgumentNullException(nameof(context));
+            if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var perference=new UserPerference() {Device = "mobile"};
+            var perference = new UserPerference() { Device = "mobile" };
             context.SetDevice(perference);
 
             await _next(context);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,8 +27,8 @@ namespace Microsoft.AspNetCore.Http
             if (context == null) throw new ArgumentNullException(nameof(context));
 
             object responsiveContext;
-            if (context.Items.TryGetValue(ResponsiveContextKey, out responsiveContext))            
-                return responsiveContext as UserPerference;                           
+            if (context.Items.TryGetValue(ResponsiveContextKey, out responsiveContext))
+                return responsiveContext as UserPerference;
 
             return null;
         }
