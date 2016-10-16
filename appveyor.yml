@@ -8,6 +8,7 @@ branches:
     - /^(.*\/)?ci-.*$/
 build_script:
   - build.cmd --quiet verify
+version: 1.0.0-beta2-build{build}
 artifacts:
   - path: 'artifacts\build\**\*.nupkg'
 

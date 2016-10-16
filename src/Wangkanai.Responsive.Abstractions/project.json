@@ -1,6 +1,6 @@
 {
   "description": "ASP.NET Core Responsive abstractions and interfaces for invocation and dispatching",
-  "version": "1.0.0-beta2",
+  "version": "1.0.0-*",
 
   "authors": [ "Sarin Na Wangkanai" ],
   "copyright": "Copyright ? 2016 Sarin Na Wangkanai",
