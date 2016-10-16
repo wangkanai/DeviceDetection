@@ -21,14 +21,19 @@ public void ConfigureServices(IServiceCollection services)
 {
     // Add responsive services.
     services.AddResponsive()
-        .AddViewLocation();
+        .AddViewSuffix();
 
     // Add framework services.
     services.AddMvc();  
 }
 ```
 * `AddResponsive` Adds the Responsive services to the services container.
-* `AddViewLocation` Adds support for device view files with default to `Suffix`. In this sample view Responsive is based on the view file suffix. For example "mobile" in the *index.mobile.cshtml* file.
+* `AddViewSuffix` Adds support for device view files  to `Suffix`. In this sample view Responsive is based on the view file suffix. 
+
+  Ex *views/[controller]/[action]/index.mobile.cshtml*
+* `AddViewSubfolder` Adds support for device view files to `Subfolder`. In this sample view Responsive is based on the view file subfolder. 
+
+  Ex *views/[controller]/[action]/mobile/index.cshtml*
 
 #### Responsive Middleware
 
