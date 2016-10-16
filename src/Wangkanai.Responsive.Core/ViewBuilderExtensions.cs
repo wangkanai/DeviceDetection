@@ -17,12 +17,12 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
 
-            return AddViewLocation(builder, ResponsiveViewLocationExpanderFormat.Suffix);
+            return AddViewLocation(builder, ResponsiveViewLocationFormat.Suffix);
         }
 
         public static IResponsiveBuilder AddViewLocation(
             this IResponsiveBuilder builder,
-            ResponsiveViewLocationExpanderFormat format)
+            ResponsiveViewLocationFormat format)
         {
             //Action<ResponsiveViewOptions> viewOptions = options => options.Format = format;
             //builder.Services.Configure(viewOptions);

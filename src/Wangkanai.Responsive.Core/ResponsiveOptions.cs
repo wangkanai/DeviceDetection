@@ -12,6 +12,6 @@ namespace Wangkanai.Responsive
 
     public class ResponsiveViewOptions
     {
-        public ResponsiveViewLocationExpanderFormat Format { get; set; } = ResponsiveViewLocationExpanderFormat.Suffix;
+        public ResponsiveViewLocationFormat Format { get; set; } = ResponsiveViewLocationFormat.Suffix;
     }
 }

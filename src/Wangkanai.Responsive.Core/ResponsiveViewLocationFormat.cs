@@ -6,7 +6,7 @@ namespace Wangkanai.Responsive
     /// <summary>
     /// Specifies the GetDevice view formar for <see cref="ResponsiveViewLocationExpander"/>.
     /// </summary>
-    public enum ResponsiveViewLocationExpanderFormat
+    public enum ResponsiveViewLocationFormat
     {
         Subfolder,
         Suffix
