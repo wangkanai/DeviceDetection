@@ -6,31 +6,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Wangkanai.Detection;
+using Wangkanai.Responsive.Abstractions;
 
 namespace Wangkanai.Responsive
 {
     public class ResponsiveMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ResponsiveOptions _options;
-        private readonly IDeviceResolver _resolver;
+        private readonly ResponsiveOptions _options;        
 
-        public ResponsiveMiddleware(RequestDelegate next, IDeviceResolver resolver, IOptions<ResponsiveOptions> options)
+        public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
         {
-            if (next == null) throw new ArgumentNullException(nameof(next));
-            if (resolver == null) throw new ArgumentNullException(nameof(resolver));
+            if (next == null) throw new ArgumentNullException(nameof(next));            
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            _next = next;
-            _resolver = resolver;
+            _next = next;            
             _options = options.Value;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, IDeviceResolver resolver)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var perference = new UserPerference() { Device = _resolver.Device.Type.ToString() };
+            var perference = new UserPerference() { Device = resolver.Device.Type.ToString() };
             context.SetDevice(perference);
 
             await _next(context);

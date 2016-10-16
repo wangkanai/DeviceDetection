@@ -10,7 +10,9 @@ namespace Wangkanai.Responsive
 {
     public class ResponsiveResolver : IResponsiveResolver
     {
-        private IDeviceResolver _deviceResolver;
+        private readonly IDeviceResolver _deviceResolver;
+
+        public IDevice Device => _deviceResolver.Device;
 
         public ResponsiveResolver(IDeviceResolver deviceResolver)
         {

@@ -7,7 +7,6 @@ namespace Wangkanai.Responsive.Abstractions
 {
     public interface IResponsiveResolver
     {
-        //DeviceInfo DeviceInfo { get; }
-
+        IDevice Device { get; }
     }
 }
