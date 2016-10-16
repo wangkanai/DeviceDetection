@@ -1,6 +1,6 @@
 {
   "description": "ASP.NET Core Responsive core components.\r\nCommonly used types:\r\nWangkanai.AspNetCore.Responsive.AreaAttribute",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-*",
 
   "authors": [ "Sarin Na Wangkanai" ],
   "copyright": "Copyright © 2016 Sarin Na Wangkanai",
