@@ -3,7 +3,7 @@
   "version": "1.0.0-*",
 
   "authors": [ "Sarin Na Wangkanai" ],
-  "copyright": "Copyright © 2016 Sarin Na Wangkanai",
+  "copyright": "Copyright ? 2016 Sarin Na Wangkanai",
   "packOptions": {
     "repository": {
       "type": "git",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0",
-    "Wangkanai.Detection.Device": "1.0.0-beta4" 
+    "Wangkanai.Detection.Device": "1.0.0-beta4"
   },
   "frameworks": {
     "net451": {},
