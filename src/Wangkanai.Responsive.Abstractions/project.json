@@ -1,6 +1,6 @@
 {
   "description": "ASP.NET Core Responsive abstractions and interfaces for invocation and dispatching",
-  "version": "1.0.0-*",
+  "version": "1.0.0-beta1",
 
   "authors": [ "Sarin Na Wangkanai" ],
   "copyright": "Copyright ? 2016 Sarin Na Wangkanai",
@@ -26,7 +26,11 @@
   },
   "dependencies": {
     "Microsoft.AspNetCore.Routing.Abstractions": "1.0.0",
+<<<<<<< HEAD
     "Wangkanai.Detection.Device": "1.0.0-beta4"
+=======
+    "Wangkanai.Browser": "1.0.0-beta2"
+>>>>>>> refs/remotes/origin/master
   },
   "frameworks": {
     "net451": {},
