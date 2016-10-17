@@ -59,7 +59,7 @@ namespace Wangkanai.Responsive
                 IDevice device;
                 try
                 {
-                    device = new Device(value); //waiting browser beta3
+                    device = new Device(value); 
                 }
                 catch (DeviceNotFoundException)
                 {

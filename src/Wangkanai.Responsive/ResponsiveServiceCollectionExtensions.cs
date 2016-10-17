@@ -28,8 +28,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddDetection().AddDevice();            
-            services.TryAddTransient(typeof(IResponsiveResolver), typeof(ResponsiveResolver));
+            services.AddDetection().AddDevice();                        
 
             return new ResponsiveBuilder(services);
         }
