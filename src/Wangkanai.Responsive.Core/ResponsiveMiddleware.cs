@@ -28,7 +28,10 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var perference = new UserPerference() { Device = resolver.Device.Type.ToString() };
+            var perference = new UserPerference()
+            {
+                Device = resolver.Device.Type.ToString()
+            };
             context.SetDevice(perference);
 
             await _next(context);

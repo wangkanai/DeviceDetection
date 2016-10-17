@@ -28,11 +28,11 @@ public void ConfigureServices(IServiceCollection services)
     services.AddMvc();  
 }
 ```
-* `AddResponsive` Adds the Responsive services to the services container.
-* `AddViewSuffix` Adds support for device view files  to `Suffix`. In this sample view Responsive is based on the view file suffix. 
+* `AddResponsive()` Adds the Responsive services to the services container.
+* `AddViewSuffix()` Adds support for device view files  to `Suffix`. In this sample view Responsive is based on the view file suffix. 
 
   Ex *views/[controller]/[action]/index.mobile.cshtml*
-* `AddViewSubfolder` Adds support for device view files to `Subfolder`. In this sample view Responsive is based on the view file subfolder. 
+* `AddViewSubfolder()` Adds support for device view files to `Subfolder`. In this sample view Responsive is based on the view file subfolder. 
 
   Ex *views/[controller]/[action]/mobile/index.cshtml*
 
@@ -42,13 +42,7 @@ The current device on a request is set in the Responsive middleware. The Respons
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 {
-    app.UseResponsive(new RequestResponsiveOptions{
-        SupportedDevices = new[]
-        {
-            DeviceType.Desktop,
-            DeviceType.Mobile
-        }        
-    });
+    app.UseResponsive();
 
     app.UseMvc(routes =>
     {
@@ -58,6 +52,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     });
 }
 ```
+* `UseResponsive()` Add the responsive middleware into the http pipeline. Its will capture the request and resolve the device to responsive services container.
 
 #### Related projects
 
