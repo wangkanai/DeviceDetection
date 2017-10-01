@@ -1,32 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF1D00F8-4E06-47EA-9A51-6B8CF000D208}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D501143-0502-4598-AA4A-D1397164AA30}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{EB381681-9F43-4EBD-AA8B-6E591E169110}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sandbox", "sample\Sandbox\Sandbox.xproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{79EB5806-00F0-4478-B35D-5CDC610D6770}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsive", "src\Wangkanai.Responsive\Wangkanai.Responsive.xproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "sample\Sandbox\Sandbox.csproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsive.Abstractions", "src\Wangkanai.Responsive.Abstractions\Wangkanai.Responsive.Abstractions.xproj", "{FC774C4B-CC98-4964-83BD-3771F42A97BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive", "src\Wangkanai.Responsive\Wangkanai.Responsive.csproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsive.Core", "src\Wangkanai.Responsive.Core\Wangkanai.Responsive.Core.xproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive.Abstractions", "src\Wangkanai.Responsive.Abstractions\Wangkanai.Responsive.Abstractions.csproj", "{FC774C4B-CC98-4964-83BD-3771F42A97BA}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsive.Test", "test\Wangkanai.Responsive.Test\Wangkanai.Responsive.Test.xproj", "{D5883029-78D8-481E-B632-97DEB9F82693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive.Core", "src\Wangkanai.Responsive.Core\Wangkanai.Responsive.Core.csproj", "{079BF429-0174-4422-8CD7-62D0987E57C3}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Wangkanai.Responsive.Core.Test", "test\Wangkanai.Responsive.Core.Test\Wangkanai.Responsive.Core.Test.xproj", "{DEAE2297-2FB3-48AC-BCAD-58EF7894622F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive.Test", "test\Wangkanai.Responsive.Test\Wangkanai.Responsive.Test.csproj", "{D5883029-78D8-481E-B632-97DEB9F82693}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive.Core.Test", "test\Wangkanai.Responsive.Core.Test\Wangkanai.Responsive.Core.Test.csproj", "{DEAE2297-2FB3-48AC-BCAD-58EF7894622F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,5 +68,8 @@ Global
 		{079BF429-0174-4422-8CD7-62D0987E57C3} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
 		{D5883029-78D8-481E-B632-97DEB9F82693} = {79EB5806-00F0-4478-B35D-5CDC610D6770}
 		{DEAE2297-2FB3-48AC-BCAD-58EF7894622F} = {79EB5806-00F0-4478-B35D-5CDC610D6770}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CE7A214-8C0A-496E-BB64-FCAB50FFE770}
 	EndGlobalSection
 EndGlobal
