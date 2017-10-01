@@ -2,7 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
-using Microsoft.AspNetCore.Mvc.Razor;
+//using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.Responsive;
 using Wangkanai.Responsive.Abstractions;
