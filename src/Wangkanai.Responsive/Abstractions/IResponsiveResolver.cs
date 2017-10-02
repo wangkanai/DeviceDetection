@@ -3,7 +3,7 @@
 
 using Wangkanai.Detection;
 
-namespace Wangkanai.Responsive.Abstractions
+namespace Wangkanai.Responsive
 {
     public interface IResponsiveResolver
     {

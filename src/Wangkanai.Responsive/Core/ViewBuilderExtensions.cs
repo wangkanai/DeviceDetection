@@ -3,8 +3,6 @@
 
 using System;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Wangkanai.Detection;
 using Wangkanai.Responsive;
 
 // ReSharper disable once CheckNamespace

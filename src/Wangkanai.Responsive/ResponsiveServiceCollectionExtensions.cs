@@ -2,12 +2,7 @@
 // The GNU GPLv3. See License.txt in the project root for license information.
 
 using System;
-//using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Wangkanai.Responsive;
-using Wangkanai.Responsive.Abstractions;
-using Wangkanai.Detection;
-using Wangkanai.Detection.Builder;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection

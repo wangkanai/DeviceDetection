@@ -72,7 +72,9 @@ namespace Wangkanai.Responsive
             return viewLocations;
         }
 
-        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, IDevice device)
+        private IEnumerable<string> ExpandViewLocationsCore(
+            IEnumerable<string> viewLocations, 
+            IDevice device)
         {
             foreach (var location in viewLocations)
             {

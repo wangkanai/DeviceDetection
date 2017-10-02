@@ -24,5 +24,6 @@ Being to target difference clientInfo devices with seperation of concern is cruc
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Wangkanai.Detection.Device" Version="2.0.0-beta2" />
   </ItemGroup>
 </Project>
