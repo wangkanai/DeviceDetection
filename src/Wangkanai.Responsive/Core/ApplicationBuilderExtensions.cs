@@ -11,6 +11,11 @@ namespace Wangkanai.Responsive
     /// </summary>
     public static class ApplicationBuilderExtensions
     {
+        /// <summary>
+        /// Adds the Responsive to <see cref="IApplicationBuilder"/> request execution pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns>Return the <see cref="IApplicationBuilder"/> for further pipeline</returns>
         public static IApplicationBuilder UseResponsive(
             this IApplicationBuilder app)
         {
