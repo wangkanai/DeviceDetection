@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xunit;
 
 namespace Wangkanai.Responsive.Test
 {
-    public partial class ResponsiveServiceCollectionExtensionsTests : ResponsiveTestAbstract
+    public partial class ResponsiveServiceCollectionExtensionsTests
     {
         [Fact]
-        public void AddResponsiveService()
+        public void AddResponsive_Services()
         {
-            // arrange
-            // act
-            // assert
+            var serviceCollection = new ServiceCollection();
+            var builder = serviceCollection.AddResponsive();
+
+            Assert.Equal(3, builder.Services.Count);
+            Assert.Same(serviceCollection, builder.Services);
+        }
+
+        [Fact]
+        public void AddResponsive_Null_ArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => ((IServiceCollection)null).AddResponsive());
         }
     }
 }
