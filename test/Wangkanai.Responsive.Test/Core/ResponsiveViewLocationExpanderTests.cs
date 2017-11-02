@@ -26,10 +26,12 @@ namespace Wangkanai.Responsive.Test.Core
             // May be we can make "_format" public so we can test the value is set properly.
         }
 
-        [Fact(Skip = "This case is not handled.")]
+        [Fact]//(Skip = "This case is not handled.")]
         public void Ctor_InvalidFormat_InvalidEnumArgumentException()
         {
-            Assert.Throws<InvalidEnumArgumentException>(() => new ResponsiveViewLocationExpander((ResponsiveViewLocationFormat)int.MaxValue));
+            var max = int.MaxValue;
+            var locationFormat = (ResponsiveViewLocationFormat)max;
+            Assert.Throws<InvalidEnumArgumentException>(() => new ResponsiveViewLocationExpander(locationFormat));
         }
 
         [Fact(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]

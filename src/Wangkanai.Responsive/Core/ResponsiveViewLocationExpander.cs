@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
 using Wangkanai.Detection;
+using System.ComponentModel;
 
 namespace Wangkanai.Responsive
 {
@@ -34,6 +35,9 @@ namespace Wangkanai.Responsive
         }
         public ResponsiveViewLocationExpander(ResponsiveViewLocationFormat format)
         {
+            if (!Enum.IsDefined(typeof(ResponsiveViewLocationFormat), (int)format))
+                throw new InvalidEnumArgumentException(nameof(format));
+
             _format = format;
         }
 
