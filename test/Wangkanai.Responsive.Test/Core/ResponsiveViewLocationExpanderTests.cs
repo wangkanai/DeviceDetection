@@ -105,11 +105,11 @@ namespace Wangkanai.Responsive.Test.Core
 
     public class ContextWithViewLocationExpander : ResponsiveTestAbstract
     {
-        public ActionContext CreateActionContext(string agent)
+        public virtual ActionContext CreateActionContext(string agent)
         {
-            var http = CreateContext(agent);
+            var service = CreateService(agent);            
             var action = new Mock<ActionContext>();
-            action.Setup(f => f.HttpContext).Returns(http);
+            action.Setup(f => f.HttpContext).Returns(service.Context);
 
             return action.Object;
         }
