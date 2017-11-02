@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,7 @@ namespace Wangkanai.Responsive.Test.Core
             Assert.Throws<InvalidEnumArgumentException>(() => new ResponsiveViewLocationExpander(locationFormat));
         }
 
-        [Fact(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]
+        [Fact]//(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]
         public void PopulateValues_ViewLocationExpanderContext_Success()
         {
             string deviceKey = "device"; // May this one can be public in ResponsiveViewLocationExpander.cs.
@@ -92,11 +93,25 @@ namespace Wangkanai.Responsive.Test.Core
 
         private ViewLocationExpanderContext SetupViewLocationExpanderContext()
         {
-            var context = new ViewLocationExpanderContext(new ActionContext(), "View", "Controller", "Area", "Page", true);
+            var basecontext = new ContextWithViewLocationExpander();
+            var action = basecontext.CreateActionContext("test");
+            var context = new ViewLocationExpanderContext(action, "View", "Controller", "Area", "Page", true);
             context.ActionContext.HttpContext = new DefaultHttpContext();
             context.ActionContext.HttpContext.SetDevice(new UserPerference() { Device = DeviceType.Tablet.ToString() });
 
             return context;
+        }
+    }
+
+    public class ContextWithViewLocationExpander : ResponsiveTestAbstract
+    {
+        public ActionContext CreateActionContext(string agent)
+        {
+            var http = CreateContext(agent);
+            var action = new Mock<ActionContext>();
+            action.Setup(f => f.HttpContext).Returns(http);
+
+            return action.Object;
         }
     }
 }

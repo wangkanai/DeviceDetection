@@ -9,7 +9,7 @@ namespace Wangkanai.Responsive.Test
     public class ResponsiveTestAbstract
     {
         private HttpContext CreateContext() => new DefaultHttpContext();
-        protected IResponsiveService CreateService(string agent)
+        public virtual IResponsiveService CreateService(string agent)
         {
             var context = CreateContext(agent);
             var service = new Mock<IResponsiveService>();
@@ -17,7 +17,7 @@ namespace Wangkanai.Responsive.Test
             service.Setup(f => f.UserAgent).Returns(new UserAgent(agent));
             return service.Object;
         }
-        protected HttpContext CreateContext(string value)
+        public virtual HttpContext CreateContext(string value)
         {
             var context = CreateContext();
             var header = "User-Agent";
