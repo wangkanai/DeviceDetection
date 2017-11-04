@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Moq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,17 +16,15 @@ namespace Wangkanai.Responsive.Test.Core
         public void Ctor_Default_Success()
         {
             var locationExpander = new ResponsiveViewLocationExpander();
-            // May be we can make "_format" public so we can test the default value is set properly.
         }
 
         [Fact]
         public void Ctor_ResponsiveViewLocationFormat_Success()
         {
             var locationExpander = new ResponsiveViewLocationExpander(ResponsiveViewLocationFormat.Subfolder);
-            // May be we can make "_format" public so we can test the value is set properly.
         }
 
-        [Fact]//(Skip = "This case is not handled.")]
+        [Fact]
         public void Ctor_InvalidFormat_InvalidEnumArgumentException()
         {
             var max = int.MaxValue;
@@ -35,7 +32,7 @@ namespace Wangkanai.Responsive.Test.Core
             Assert.Throws<InvalidEnumArgumentException>(() => new ResponsiveViewLocationExpander(locationFormat));
         }
 
-        [Fact]//(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]
+        [Fact]
         public void PopulateValues_ViewLocationExpanderContext_Success()
         {
             string deviceKey = "device"; // May this one can be public in ResponsiveViewLocationExpander.cs.
@@ -54,27 +51,70 @@ namespace Wangkanai.Responsive.Test.Core
             Assert.Throws<ArgumentNullException>(() => locationExpander.PopulateValues(null));
         }
 
-        [Fact(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]
-        public void ExpandViewLocations_ViewLocationExpanderContext_IEnumerable_ReturnsExpected()
+        public static IEnumerable<object[]> ViewLocationExpanderTestData
         {
-            var context = SetupViewLocationExpanderContext();
-            var viewLocations = new List<string>() { "{0} location1", "{0} location2" };
-            var locationExpander = new ResponsiveViewLocationExpander();
-            locationExpander.PopulateValues(context);
-            var resultLocations = locationExpander.ExpandViewLocations(context, viewLocations);
-            
-            Assert.True(viewLocations.Count < resultLocations.ToList().Count);
+            get
+            {
+                yield return new object[]
+                {
+                    ResponsiveViewLocationFormat.Suffix,
+                    new[]
+                    {
+                        "/Views/{1}/{0}.cshtml",
+                        "/Views/Shared/{0}.cshtml"
+                    },
+                    new[]
+                    {
+                        "/Views/{1}/{0}.Tablet.cshtml",
+                        "/Views/{1}/{0}.cshtml",
+                        "/Views/Shared/{0}.Tablet.cshtml",
+                        "/Views/Shared/{0}.cshtml",
+                    }
+                };
+
+                yield return new object[]
+                {
+                    ResponsiveViewLocationFormat.Subfolder,
+                    new[]
+                    {
+                        "/Views/{1}/{0}.cshtml",
+                        "/Views/Shared/{0}.cshtml"
+                    },
+                    new[]
+                    {
+                        "/Views/{1}/Tablet/{0}.cshtml",
+                        "/Views/{1}/{0}.cshtml",
+                        "/Views/Shared/Tablet/{0}.cshtml",
+                        "/Views/Shared/{0}.cshtml",
+                    }
+                };
+            }
         }
 
-        [Fact(Skip = "Fails with NullReferenceExeption because context.Values is not set to instance of an object.")]
+        [Theory]
+        [MemberData(nameof(ViewLocationExpanderTestData))]
+        public void ExpandViewLocations_ViewLocationExpanderContext_IEnumerable_ReturnsExpected(
+            ResponsiveViewLocationFormat format,
+            IEnumerable<string> viewLocations,
+            IEnumerable<string> expectedViewLocations)
+        {
+            var context = SetupViewLocationExpanderContext();
+            var locationExpander = new ResponsiveViewLocationExpander(format);
+            locationExpander.PopulateValues(context);
+            var resultLocations = locationExpander.ExpandViewLocations(context, viewLocations).ToList();
+
+            Assert.Equal(expectedViewLocations, resultLocations.ToList());
+        }
+
+        [Fact]
         public void ExpandViewLocations_NoDevice_ReturnsExpected()
         {
             var context = SetupViewLocationExpanderContext();
-            var viewLocations = new List<string>() { "{0} location1", "{0} location2" };
+            var viewLocations = new List<string>() { "/Views/{1}/{0}.cshtml", "/Views/Shared/{0}.cshtml" };
             var locationExpander = new ResponsiveViewLocationExpander();
             var resultLocations = locationExpander.ExpandViewLocations(context, viewLocations);
-            
-            Assert.Equal(viewLocations.Count, resultLocations.ToList().Count);
+
+            Assert.Equal(viewLocations, resultLocations);
         }
 
         [Fact]
@@ -93,25 +133,12 @@ namespace Wangkanai.Responsive.Test.Core
 
         private ViewLocationExpanderContext SetupViewLocationExpanderContext()
         {
-            var basecontext = new ContextWithViewLocationExpander();
-            var action = basecontext.CreateActionContext("test");
-            var context = new ViewLocationExpanderContext(action, "View", "Controller", "Area", "Page", true);
+            var context = new ViewLocationExpanderContext(new ActionContext(), "View", "Controller", "Area", "Page", true);
+            context.Values = new Dictionary<string, string>();
             context.ActionContext.HttpContext = new DefaultHttpContext();
             context.ActionContext.HttpContext.SetDevice(new UserPerference() { Device = DeviceType.Tablet.ToString() });
 
             return context;
-        }
-    }
-
-    public class ContextWithViewLocationExpander : ResponsiveTestAbstract
-    {
-        public virtual ActionContext CreateActionContext(string agent)
-        {
-            var service = CreateService(agent);            
-            var action = new Mock<ActionContext>();
-            action.Setup(f => f.HttpContext).Returns(service.Context);
-
-            return action.Object;
         }
     }
 }
