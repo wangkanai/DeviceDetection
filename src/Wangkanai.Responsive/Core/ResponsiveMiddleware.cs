@@ -12,14 +12,17 @@ namespace Wangkanai.Responsive
     public class ResponsiveMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ResponsiveOptions _options;        
+        private readonly ResponsiveOptions _options;
+        //private readonly IDeviceResolver _resolver;
 
         public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
         {
-            if (next == null) throw new ArgumentNullException(nameof(next));            
+            if (next == null) throw new ArgumentNullException(nameof(next));
+            //if (resolver == null) throw new ArgumentNullException(nameof(resolver));
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            _next = next;            
+            _next = next;
+            //_resolver = resolver;
             _options = options.Value;
         }
 
