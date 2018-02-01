@@ -54,7 +54,10 @@ namespace Sandbox
 
             app.UseStaticFiles();
 
-            app.UseResponsive(new ResponsiveOptions());
+            app.UseResponsive(new ResponsiveOptions
+            {
+                TabletDefault = Wangkanai.Detection.DeviceType.Mobile
+            });
 
             app.UseMvc(routes =>
             {

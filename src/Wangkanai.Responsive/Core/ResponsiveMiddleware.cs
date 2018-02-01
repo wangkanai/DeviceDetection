@@ -13,16 +13,13 @@ namespace Wangkanai.Responsive
     {
         private readonly RequestDelegate _next;
         private readonly ResponsiveOptions _options;
-        //private readonly IDeviceResolver _resolver;
 
         public ResponsiveMiddleware(RequestDelegate next, IOptions<ResponsiveOptions> options)
         {
             if (next == null) throw new ArgumentNullException(nameof(next));
-            //if (resolver == null) throw new ArgumentNullException(nameof(resolver));
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             _next = next;
-            //_resolver = resolver;
             _options = options.Value;
         }
 
@@ -30,10 +27,12 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            var perference = new UserPerference()
-            {
-                Device = resolver.Device.Type.ToString()
-            };
+            var device = resolver.Device.Type;
+
+            var manager = new ResolverManager(device, _options);
+
+            var perference = new UserPerference() { Device = manager.Device() };
+
             context.SetDevice(perference);
 
             await _next(context);

@@ -3,6 +3,7 @@
 
 using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
 
 namespace Wangkanai.Responsive
 {
@@ -33,7 +34,7 @@ namespace Wangkanai.Responsive
             if (app == null) throw new ArgumentNullException(nameof(app));
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            return app.UseMiddleware<ResponsiveMiddleware>(options);
+            return app.UseMiddleware<ResponsiveMiddleware>(Options.Create(options));
         }
     }
 }

@@ -28,8 +28,7 @@ namespace Wangkanai.Responsive
         private const string DEVICE_KEY = "device";
         private readonly ResponsiveViewLocationFormat _format;
 
-        public ResponsiveViewLocationExpander()
-            : this(ResponsiveViewLocationFormat.Suffix)
+        public ResponsiveViewLocationExpander() : this(ResponsiveViewLocationFormat.Suffix)
         {
 
         }
@@ -48,9 +47,7 @@ namespace Wangkanai.Responsive
             context.Values[DEVICE_KEY] = context.ActionContext.HttpContext.GetDevice().Device;
         }
 
-        public IEnumerable<string> ExpandViewLocations(
-            ViewLocationExpanderContext context,
-            IEnumerable<string> viewLocations)
+        public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (viewLocations == null) throw new ArgumentNullException(nameof(viewLocations));
@@ -63,7 +60,7 @@ namespace Wangkanai.Responsive
                 IDevice device;
                 try
                 {
-                    device = new Device(value); 
+                    device = new Device(value);
                 }
                 catch (DeviceNotFoundException)
                 {
@@ -76,9 +73,7 @@ namespace Wangkanai.Responsive
             return viewLocations;
         }
 
-        private IEnumerable<string> ExpandViewLocationsCore(
-            IEnumerable<string> viewLocations, 
-            IDevice device)
+        private IEnumerable<string> ExpandViewLocationsCore(IEnumerable<string> viewLocations, IDevice device)
         {
             foreach (var location in viewLocations)
             {
