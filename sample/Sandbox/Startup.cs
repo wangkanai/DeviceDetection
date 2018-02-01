@@ -34,7 +34,7 @@ namespace Sandbox
                 .AddViewSubfolder();
 
             // Add framework services.
-            services.AddMvc();            
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +45,7 @@ namespace Sandbox
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();                
+                app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Sandbox
 
             app.UseStaticFiles();
 
-            app.UseResponsive();
+            app.UseResponsive(new ResponsiveOptions());
 
             app.UseMvc(routes =>
             {
