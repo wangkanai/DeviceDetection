@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System;
@@ -42,7 +45,7 @@ namespace Wangkanai.Responsive.Test.Core
 
             Assert.NotEqual(0, context.Values.Count);
             Assert.Same(context.ActionContext.HttpContext.GetDevice().Device, context.Values[deviceKey]);
-        }        
+        }
 
         [Fact]
         public void PopulateValues_Null_ThrowsArgumentNullException()

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System;
 using System.Threading.Tasks;
@@ -13,7 +16,7 @@ namespace Wangkanai.Responsive.Test.Core
         public void Ctor_RequestDelegate_ResponsiveOptions_Success()
         {
             var options = Options.Create(new ResponsiveOptions());
-            var middleware = new ResponsiveMiddleware(d => Task.Factory.StartNew(() => d), options); 
+            var middleware = new ResponsiveMiddleware(d => Task.Factory.StartNew(() => d), options);
         }
 
         [Fact]

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Wangkanai.Detection;
 using Wangkanai.Responsive;
 
 namespace Sandbox
@@ -56,7 +57,7 @@ namespace Sandbox
 
             app.UseResponsive(new ResponsiveOptions
             {
-                TabletDefault = Wangkanai.Detection.DeviceType.Mobile
+                TabletDefault = DeviceType.Mobile
             });
 
             app.UseMvc(routes =>
