@@ -6,14 +6,8 @@ branches:
     - release
     - dev
     - /^(.*\/)?ci-.*$/
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+build_script:
+  - ps: .\run.ps1 default-build
 clone_depth: 1
 environment:
   global:
