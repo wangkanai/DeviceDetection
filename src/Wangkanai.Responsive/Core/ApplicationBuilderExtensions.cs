@@ -3,6 +3,7 @@
 
 using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
 
 namespace Wangkanai.Responsive
 {
@@ -16,22 +17,24 @@ namespace Wangkanai.Responsive
         /// </summary>
         /// <param name="app"></param>
         /// <returns>Return the <see cref="IApplicationBuilder"/> for further pipeline</returns>
-        public static IApplicationBuilder UseResponsive(
-            this IApplicationBuilder app)
+        public static IApplicationBuilder UseResponsive(this IApplicationBuilder app)
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
 
             return app.UseMiddleware<ResponsiveMiddleware>();
         }
-
-        public static IApplicationBuilder UseResponsive(
-            this IApplicationBuilder app,
-            ResponsiveOptions options)
+        /// <summary>
+        /// Adds the responsive to <see cref="IApplicationBuilder"/> request execution pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="options"></param>
+        /// <returns>Return the <see cref="IApplicationBuilder"/> for further pipeline</returns>
+        public static IApplicationBuilder UseResponsive(this IApplicationBuilder app, ResponsiveOptions options)
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            return app.UseMiddleware<ResponsiveMiddleware>(options);
+            return app.UseMiddleware<ResponsiveMiddleware>(Options.Create(options));
         }
     }
 }

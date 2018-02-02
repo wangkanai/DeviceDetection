@@ -18,12 +18,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public static IResponsiveBuilder AddResponsive(
-            this IServiceCollection services)
+        public static IResponsiveBuilder AddResponsive(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddDetection().AddDevice();                        
+            services.AddDetection().AddDevice();
 
             return new ResponsiveBuilder(services);
         }

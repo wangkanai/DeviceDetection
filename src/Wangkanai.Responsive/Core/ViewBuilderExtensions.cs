@@ -24,9 +24,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return AddViewLocation(builder, ResponsiveViewLocationFormat.Subfolder);
         }
 
-        private static IResponsiveBuilder AddViewLocation(
-            this IResponsiveBuilder builder,
-            ResponsiveViewLocationFormat format)
+        private static IResponsiveBuilder AddViewLocation(this IResponsiveBuilder builder, ResponsiveViewLocationFormat format)
         {
             builder.Services.Configure<RazorViewEngineOptions>(
                 options =>

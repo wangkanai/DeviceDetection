@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿// Copyright (c) 2016 Sarin Na Wangkanai, All Rights Reserved.
+// The GNU GPLv3. See License.txt in the project root for license information.
+
+using Microsoft.AspNetCore.Http;
 using System;
 using Wangkanai.Detection;
 using Xunit;
@@ -35,7 +38,7 @@ namespace Wangkanai.Responsive.Test.Core
 
         [Fact]
         public void GetDevice_HttpContext_ReturnsExpected()
-        {           
+        {
             string device = DeviceType.Tablet.ToString();
             var preference = new UserPerference() { Device = device };
             var context = new DefaultHttpContext();

@@ -54,6 +54,18 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 ```
 * `UseResponsive()` Add the responsive middleware into the http pipeline. Its will capture the request and resolve the device to responsive services container.
 
+##### Customized able options (beta 3)
+
+This enable the middleware to customized the default response for any type of request device to the configured options.
+
+```
+app.UseResponsive(new ResponsiveOptions
+{
+    TabletDefault = DeviceType.Mobile
+});
+```
+* `ResponsiveOptions` has 3 default configurable via `DesktopDefault`, `TabletDefault`, and `MobileDefault`.
+
 #### Related projects
 
 * [ASP.NET Core Detection (Wangkanai.Detection)](https://github.com/wangkanai/Detection)
