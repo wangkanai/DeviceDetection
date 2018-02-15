@@ -1,7 +1,7 @@
 # ASP.NET Core Responsive
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cbx1xvcln7xaccs5?svg=true)](https://ci.appveyor.com/project/wangkanai/responsive) 
-[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsive.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsive/) **Pre-Release** (Still in development)
+[![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsive.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsive/)
 
 ![ASP.NET Core Responsive](https://raw.githubusercontent.com/wangkanai/Responsive/dev/asset/asp.net-core-responsive.svg?sanitize=true)
 
