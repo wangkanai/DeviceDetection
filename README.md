@@ -8,14 +8,18 @@
 ASP.NET Core Responsive middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
 
-### Installation - [NuGet](https://www.nuget.org/packages/Wangkanai.Responsive/)
+## Installation
+
+Installation of Responsive library will bring in all dependency packages.
 
 ```powershell
 PM> install-package Wangkanai.Responsive -pre
 ```
-### Implement a strategy to select the device for each request
-#### Configuring Responsive
+
+## Configure Service
+
 Responsive is configured in the `ConfigureServices` method:
+
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -28,17 +32,20 @@ public void ConfigureServices(IServiceCollection services)
     services.AddMvc();  
 }
 ```
+
 * `AddResponsive()` Adds the Responsive services to the services container.
 * `AddViewSuffix()` Adds support for device view files  to `Suffix`. In this sample view Responsive is based on the view file suffix. 
 
-  Ex *views/[controller]/[action]/index.mobile.cshtml*
+  Ex `*views/[controller]/[action]/index.mobile.cshtml*`
+
 * `AddViewSubfolder()` Adds support for device view files to `Subfolder`. In this sample view Responsive is based on the view file subfolder. 
 
-  Ex *views/[controller]/[action]/mobile/index.cshtml*
+  Ex `*views/[controller]/[action]/mobile/index.cshtml*`
 
-#### Responsive Middleware
+## Configure Middleware
 
 The current device on a request is set in the Responsive middleware. The Responsive middleware is enabled in the `Configure` method of *Startup.cs* file.
+
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 {
@@ -52,9 +59,10 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     });
 }
 ```
+
 * `UseResponsive()` Add the responsive middleware into the http pipeline. Its will capture the request and resolve the device to responsive services container.
 
-##### Customized able options (beta 3)
+## Customized able options (beta 3)
 
 This enable the middleware to customized the default response for any type of request device to the configured options.
 
@@ -64,9 +72,22 @@ app.UseResponsive(new ResponsiveOptions
     TabletDefault = DeviceType.Mobile
 });
 ```
+
 * `ResponsiveOptions` has 3 default configurable via `DesktopDefault`, `TabletDefault`, and `MobileDefault`.
 
-#### Related projects
+### Directory Structure
+* `src` - The code of this project lives here
+* `test` - Unit tests of this project to valid that everything pass specs
+* `sample` - Contains sample web application of usage
+
+### Contributing
+
+All contribution are welcome, please contact the author.
+
+### Related projects
 
 * [ASP.NET Core Detection (Wangkanai.Detection)](https://github.com/wangkanai/Detection)
+
+### See the [LICENSE](https://github.com/wangkanai/Browser/blob/master/LICENSE) file.
+
 
