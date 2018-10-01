@@ -11,7 +11,7 @@ namespace Wangkanai.Responsive.TagHelpers
 {
     [HtmlTargetElement("device", Attributes = IncludeAttributeName)]
     [HtmlTargetElement("device", Attributes = ExcludeAttributeName)]
-    public class DeviceTagHelper : TagHelper
+     public class DeviceTagHelper : TagHelper
     {
         private const string ElementName = "device";
         private const string IncludeAttributeName = "include";
@@ -24,25 +24,20 @@ namespace Wangkanai.Responsive.TagHelpers
         [HtmlAttributeName(ExcludeAttributeName)]
         public string Exclude { get; set; }
 
-        private readonly IDeviceResolver Resolver;
+        private readonly IDeviceResolver _resolver;
 
         [HtmlAttributeNotBound]
         [ViewContext]
         public ViewContext ViewContext { get; set; }
 
-        public DeviceTagHelper(TagHelperContext context, TagHelperOutput output, IDeviceResolver resolver)
+        
+        public DeviceTagHelper(IDeviceResolver resolver)
         {
-            if (resolver == null) throw new ArgumentNullException(nameof(resolver));
-
-            Resolver = resolver;
-
-            base.Process(context, output);
+            _resolver = resolver;
+           
         }
 
-        //public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        //{
-        //    Process(context, output);
-        //}
+       
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
@@ -52,7 +47,7 @@ namespace Wangkanai.Responsive.TagHelpers
 
             if (string.IsNullOrWhiteSpace(Include) && string.IsNullOrWhiteSpace(Exclude)) return;
 
-            var device = Resolver.Device;
+            var device = _resolver.Device;
             var currentDeviceName = device.Type.ToString();
 
             if (Exclude != null)
@@ -88,7 +83,6 @@ namespace Wangkanai.Responsive.TagHelpers
 
             if (hasDevice) output.SuppressOutput();
 
-            base.Process(context, output);
-        }
+          }
     }
 }
