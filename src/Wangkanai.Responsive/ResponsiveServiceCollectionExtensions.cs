@@ -22,7 +22,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddDetection().AddDevice();
+            services.AddDetectionCore().AddDevice();
 
             return new ResponsiveBuilder(services);
         }
