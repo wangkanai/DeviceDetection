@@ -14,33 +14,9 @@ namespace Sandbox.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly IResponsiveResolver _resolver;
-
-        //public HomeController(IResponsiveResolver resolver)
-        //{
-        //    this._resolver = resolver;
-        //}
-
         public IActionResult Index()
         {
             return View();//_resolver.DeviceInfo);
-        }
-
-        [HttpPost]
-        public IActionResult ChangeToDesktop()
-        {
-            var preference = HttpContext.GetDevice();
-            preference.Change(DeviceType.Desktop);
-            HttpContext.SetDevice(preference);
-            return View();
-        }
-        [HttpPost]
-        public IActionResult ChangeToMobile()
-        {
-            var preference = HttpContext.GetDevice();
-            preference.Change(DeviceType.Mobile);
-            HttpContext.SetDevice(preference);
-            return View();
         }
 
         public IActionResult Error()

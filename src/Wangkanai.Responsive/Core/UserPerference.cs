@@ -7,7 +7,7 @@ namespace Wangkanai.Responsive
 {
     public class UserPerference
     {
-        public string Device { get; protected set; }
+        public string Device { get; set; }
 
         public void Change(DeviceType device){
             this.Device = device.ToString();
