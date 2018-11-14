@@ -18,7 +18,7 @@ namespace Sandbox.Controllers
         public IActionResult Desktop(string returnUrl = null)
         {
             var preference = HttpContext.GetDevice();
-            preference.Change(DeviceType.Desktop);
+            preference.Device = "desktop";
             HttpContext.SetDevice(preference);
             return RedirectToLocal(returnUrl);
         }
@@ -26,7 +26,7 @@ namespace Sandbox.Controllers
         public IActionResult Mobile(string returnUrl = null)
         {
             var preference = HttpContext.GetDevice();
-            preference.Change(DeviceType.Mobile);
+            preference.Device = "mobile";
             HttpContext.SetDevice(preference);
             return RedirectToLocal(returnUrl);
         }

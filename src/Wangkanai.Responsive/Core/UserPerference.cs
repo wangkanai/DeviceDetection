@@ -9,8 +9,6 @@ namespace Wangkanai.Responsive
     {
         public string Device { get; set; }
 
-        public void Change(DeviceType device){
-            this.Device = device.ToString();
-        }
+        public string Preferred { get; set; }
     }
 }
