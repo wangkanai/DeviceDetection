@@ -3,23 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF1D00F8-4E06-47EA-9A51-6B8CF000D208}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D501143-0502-4598-AA4A-D1397164AA30}"
-	ProjectSection(SolutionItems) = preProject
-		LICENSE = LICENSE
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{EB381681-9F43-4EBD-AA8B-6E591E169110}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{79EB5806-00F0-4478-B35D-5CDC610D6770}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "sample\Sandbox\Sandbox.csproj", "{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive", "src\Wangkanai.Responsive\Wangkanai.Responsive.csproj", "{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive.Test", "test\Wangkanai.Responsive.Test\Wangkanai.Responsive.Test.csproj", "{D5883029-78D8-481E-B632-97DEB9F82693}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D1664F1-9BC9-41C2-891B-31AB068307B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wangkanai.Responsive", "src\Wangkanai.Responsive\Wangkanai.Responsive.csproj", "{46BB618D-4A75-498A-AD74-0623DD54685D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,22 +25,22 @@ Global
 		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5883029-78D8-481E-B632-97DEB9F82693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BB618D-4A75-498A-AD74-0623DD54685D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BB618D-4A75-498A-AD74-0623DD54685D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BB618D-4A75-498A-AD74-0623DD54685D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BB618D-4A75-498A-AD74-0623DD54685D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{54CF0E97-5A91-4DD5-A497-FBD4C8A10218} = {EB381681-9F43-4EBD-AA8B-6E591E169110}
-		{AA8848E6-CB48-409C-80BA-FFA9A8EE5B6F} = {FF1D00F8-4E06-47EA-9A51-6B8CF000D208}
 		{D5883029-78D8-481E-B632-97DEB9F82693} = {79EB5806-00F0-4478-B35D-5CDC610D6770}
+		{46BB618D-4A75-498A-AD74-0623DD54685D} = {5D1664F1-9BC9-41C2-891B-31AB068307B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CE7A214-8C0A-496E-BB64-FCAB50FFE770}
