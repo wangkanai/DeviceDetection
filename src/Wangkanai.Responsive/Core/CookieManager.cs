@@ -24,23 +24,24 @@ namespace Wangkanai.Responsive
             return string.Empty;
         }
 
-        private string Get(string key)
+        public DeviceType Get()
         {
-            return _context.Request.Cookies[key];
+            var value = _context.Request.Cookies[ResponsiveContextKey];
+            DeviceType result;
+            Enum.TryParse<DeviceType>(value, out result);
+            return result;
         }
-        private void Set(string key, string value, int? expire)
+        public void Set(DeviceType value)
         {
             var option = new CookieOptions();
-            if (expire.HasValue)
-                option.Expires = DateTime.Now.AddMinutes(expire.Value);
-            else
-                option.Expires = DateTime.Now.AddMinutes(10);
-            _context.Response.Cookies.Append(key, value, option);
+            option.Expires = DateTime.Now.AddMinutes(60);
+
+            _context.Response.Cookies.Append(ResponsiveContextKey,value.ToString(), option);
         }
 
-        private void Remove(string key)
+        public void Remove()
         {
-            _context.Response.Cookies.Delete(key);
+            _context.Response.Cookies.Delete(ResponsiveContextKey);
         }
     }
 }
