@@ -5,22 +5,28 @@ using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
-    public class ResolverManager
+    public class ResolverManager : DeviceManager
     {
-        private readonly DeviceType _resolved;
+        public ResolverManager(DeviceType resolved, ResponsiveOptions options)
+        : base(resolved, options) { }
+
+    }
+
+    public class DeviceManager : IDeviceManager
+    {
+        private readonly DeviceType _selected;
         private readonly ResponsiveOptions _options;
 
-        public ResolverManager(DeviceType resolved, ResponsiveOptions options)
+        public DeviceManager(DeviceType selected, ResponsiveOptions options)
         {
-            _resolved = resolved;
+            _selected = selected;
             _options = options;
         }
-
-        public string Device()
+        public virtual string Device()
         {
-            if (_resolved == DeviceType.Mobile) return _options.MobileDefault.ToString();
-            if (_resolved == DeviceType.Tablet) return _options.TabletDefault.ToString();
-            if (_resolved == DeviceType.Desktop) return _options.DesktopDefault.ToString();
+            if (_selected == DeviceType.Mobile) return _options.MobileDefault.ToString();
+            if (_selected == DeviceType.Tablet) return _options.TabletDefault.ToString();
+            if (_selected == DeviceType.Desktop) return _options.DesktopDefault.ToString();
 
             return string.Empty;
         }

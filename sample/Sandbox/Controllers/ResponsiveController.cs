@@ -25,6 +25,7 @@ namespace Sandbox.Controllers
 
         public IActionResult Mobile(string returnUrl = null)
         {
+            var responsive = HttpContext.Responsive();
             var preference = HttpContext.GetDevice();
             preference.Device = "mobile";
             HttpContext.SetDevice(preference);
