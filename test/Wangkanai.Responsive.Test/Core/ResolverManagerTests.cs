@@ -32,7 +32,7 @@ namespace Wangkanai.Responsive.Test.Core
             Assert.Equal(desktop, options.DesktopDefault);
 
             var manager = new ResolverManager(tablet, options);
-            Assert.Equal(mobile.ToString(), manager.Device());
+            Assert.Equal(mobile, manager.Device);
         }
     }
 }

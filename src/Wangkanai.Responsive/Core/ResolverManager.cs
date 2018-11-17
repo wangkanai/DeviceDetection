@@ -1,34 +1,28 @@
 ﻿// Copyright (c) 2018 Sarin Na Wangkanai, All Rights Reserved.
 // The Apache v2. See License.txt in the project root for license information.
 
+using System;
 using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
-    public class ResolverManager : DeviceManager
+    public class ResolverManager : DeviceManager, IDeviceManager
     {
+        private readonly DeviceType _resolved;
+
+        public ResolverManager(IDeviceResolver resolver, ResponsiveOptions options)
+            : base(options)
+        {
+            if (resolver == null) throw new ArgumentNullException(nameof(resolver));
+
+            this._resolved = resolver.Device.Type;
+        }
         public ResolverManager(DeviceType resolved, ResponsiveOptions options)
-        : base(resolved, options) { }
-
-    }
-
-    public class DeviceManager : IDeviceManager
-    {
-        private readonly DeviceType _selected;
-        private readonly ResponsiveOptions _options;
-
-        public DeviceManager(DeviceType selected, ResponsiveOptions options)
+            : base(options)
         {
-            _selected = selected;
-            _options = options;
+            this._resolved = resolved;
         }
-        public virtual string Device()
-        {
-            if (_selected == DeviceType.Mobile) return _options.MobileDefault.ToString();
-            if (_selected == DeviceType.Tablet) return _options.TabletDefault.ToString();
-            if (_selected == DeviceType.Desktop) return _options.DesktopDefault.ToString();
 
-            return string.Empty;
-        }
+        public DeviceType Device => Override(_resolved);
     }
 }
