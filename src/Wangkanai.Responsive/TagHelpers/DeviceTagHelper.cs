@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿// Copyright (c) 2018 Sarin Na Wangkanai, All Rights Reserved.
+// The Apache v2. See License.txt in the project root for license information.
+
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Primitives;

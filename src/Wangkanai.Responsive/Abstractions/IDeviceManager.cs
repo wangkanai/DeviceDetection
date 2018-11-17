@@ -5,10 +5,8 @@ using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
-    public class UserPerference
+    public interface IDeviceManager
     {
-        public string Device { get; set; }
-
-        public string Preferred { get; set; }
+        DeviceType Device { get; }
     }
 }

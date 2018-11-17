@@ -2,3 +2,8 @@
 
 <device include="mobile">mobile only</device>
 <device exclude="mobile">not mobile</device>
+
+<device include="mobile">
+    index.mobile working
+    <a asp-controller="Responsive" asp-action="Desktop" asp-route-returnurl="@Url">Desktop Version</a>
+</device>
