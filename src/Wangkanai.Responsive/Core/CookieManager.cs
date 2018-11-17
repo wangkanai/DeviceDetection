@@ -26,6 +26,7 @@ namespace Wangkanai.Responsive
         {
             var value = _context.Request.Cookies[ResponsiveContextKey];
             DeviceType result;
+            Console.Write(value);
             Enum.TryParse<DeviceType>(value, out result);
 
             return result;
