@@ -7,8 +7,20 @@ namespace Wangkanai.Responsive
 {
     public class UserPerference
     {
-        public string Device { get; set; }
+        public string Resolver { get; set; }
 
-        public string Preferred { get; set; }
+        public string Cookie { get; set; }
+
+        public UserPerference() { }
+        public UserPerference(string resolver, string cookie)
+        {
+            Resolver = resolver;
+            Cookie = cookie;
+        }
+
+        public UserPerference(DeviceType resolver, DeviceType cookie)
+            : this(resolver.ToString(), cookie.ToString())
+        {
+        }
     }
 }
