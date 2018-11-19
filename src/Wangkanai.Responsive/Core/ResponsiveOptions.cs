@@ -19,5 +19,13 @@ namespace Wangkanai.Responsive
             MobileDefault = mobile;
         }
 
+        public DeviceType Default(DeviceType type)
+        {
+            if (type == DeviceType.Mobile) return MobileDefault;
+            if (type == DeviceType.Tablet) return TabletDefault;
+            if (type == DeviceType.Desktop) return DesktopDefault;
+
+            return type;
+        }
     }
 }

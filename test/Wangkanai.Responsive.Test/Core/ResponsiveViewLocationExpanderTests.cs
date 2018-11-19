@@ -44,7 +44,7 @@ namespace Wangkanai.Responsive.Test.Core
             locationExpander.PopulateValues(context);
 
             Assert.NotEqual(0, context.Values.Count);
-            Assert.Same(context.ActionContext.HttpContext.GetDevice().Device, context.Values[deviceKey]);
+            Assert.Same(context.ActionContext.HttpContext.GetDevice().Resolver, context.Values[deviceKey]);
         }
 
         [Fact]
@@ -139,7 +139,7 @@ namespace Wangkanai.Responsive.Test.Core
             var context = new ViewLocationExpanderContext(new ActionContext(), "View", "Controller", "Area", "Page", true);
             context.Values = new Dictionary<string, string>();
             context.ActionContext.HttpContext = new DefaultHttpContext();
-            context.ActionContext.HttpContext.SetDevice(new UserPerference() { Device = DeviceType.Tablet.ToString() });
+            context.ActionContext.HttpContext.SetDevice(new UserPerference() { Resolver = DeviceType.Tablet.ToString() });
 
             return context;
         }

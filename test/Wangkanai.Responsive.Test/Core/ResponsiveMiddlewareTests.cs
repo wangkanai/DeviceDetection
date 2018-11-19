@@ -40,7 +40,7 @@ namespace Wangkanai.Responsive.Test.Core
 
             await middleware.Invoke(context, new DeviceResolver());
 
-            Assert.Same(DeviceType.Tablet.ToString(), context.GetDevice().Device);
+            Assert.Equal(DeviceType.Tablet.ToString(), context.GetDevice().Resolver);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace Wangkanai.Responsive.Test.Core
             var options = Options.Create(new ResponsiveOptions());
             var middleware = new ResponsiveMiddleware(d => Task.Factory.StartNew(() => d), options);
 
-            await Assert.ThrowsAsync<NullReferenceException>(async () => await middleware.Invoke(context, null));
+            await Assert.ThrowsAsync<ArgumentNullException>(async () => await middleware.Invoke(context, null));
         }
 
         private class DeviceResolver : IDeviceResolver

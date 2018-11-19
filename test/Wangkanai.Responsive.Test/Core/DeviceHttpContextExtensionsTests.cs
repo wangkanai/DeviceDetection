@@ -40,12 +40,12 @@ namespace Wangkanai.Responsive.Test.Core
         public void GetDevice_HttpContext_ReturnsExpected()
         {
             string device = DeviceType.Tablet.ToString();
-            var preference = new UserPerference() { Device = device };
+            var preference = new UserPerference() { Resolver = device };
             var context = new DefaultHttpContext();
             context.SetDevice(preference);
 
             Assert.Same(preference, context.GetDevice());
-            Assert.Same(preference.Device, context.GetDevice().Device);
+            Assert.Same(preference.Resolver, context.GetDevice().Resolver);
         }
 
         [Fact]
