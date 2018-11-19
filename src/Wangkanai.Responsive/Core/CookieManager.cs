@@ -9,19 +9,20 @@ using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
-    public class CookieManager : DeviceManager, IDeviceManager
+    public class CookieManager : IDeviceManager
     {
+        private readonly ResponsiveOptions _options;
         private const string ResponsiveContextKey = "Responsive";
         private readonly HttpContext _context;
 
         public CookieManager(HttpContext context, ResponsiveOptions options)
-            : base(options)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
             _context = context;
+            _options = options;
         }
-        public DeviceType Device => Override(Get());
+        public DeviceType Device => _options.Default(Get());
         public DeviceType Get()
         {
             var value = _context.Request.Cookies[ResponsiveContextKey];

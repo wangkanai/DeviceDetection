@@ -6,23 +6,24 @@ using Wangkanai.Detection;
 
 namespace Wangkanai.Responsive
 {
-    public class ResolverManager : DeviceManager, IDeviceManager
+    public class ResolverManager : IDeviceManager
     {
+        private readonly ResponsiveOptions _options;
         private readonly DeviceType _resolved;
 
         public ResolverManager(IDeviceResolver resolver, ResponsiveOptions options)
-            : base(options)
         {
             if (resolver == null) throw new ArgumentNullException(nameof(resolver));
 
-            this._resolved = resolver.Device.Type;
+            _resolved = resolver.Device.Type;
+            _options = options;
         }
         public ResolverManager(DeviceType resolved, ResponsiveOptions options)
-            : base(options)
         {
-            this._resolved = resolved;
+            _resolved = resolved;
+            _options = options;
         }
 
-        public DeviceType Device => Override(_resolved);
+        public DeviceType Device => _options.Default(_resolved);
     }
 }
