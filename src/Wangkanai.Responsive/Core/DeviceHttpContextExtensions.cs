@@ -25,7 +25,7 @@ namespace Microsoft.AspNetCore.Http
             if (context.Items.TryGetValue(ResponsiveContextKey, out responsiveContext))
                 return responsiveContext as UserPerference;
 
-            return null;
+            return new UserPerference("Desktop", "Desktop");
         }
     }
 }
