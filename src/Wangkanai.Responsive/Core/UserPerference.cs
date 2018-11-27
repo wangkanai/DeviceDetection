@@ -11,6 +11,14 @@ namespace Wangkanai.Responsive
 
         public string Cookie { get; set; }
 
+        public string Preferred
+        {
+            get
+            {
+                return (Resolver != Cookie) ? Cookie : Resolver;
+            }
+        }
+
         public UserPerference() { }
         public UserPerference(string resolver, string cookie)
         {

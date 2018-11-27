@@ -44,7 +44,7 @@ namespace Wangkanai.Responsive
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            context.Values[DEVICE_KEY] = context.ActionContext.HttpContext.GetDevice().Resolver;
+            context.Values[DEVICE_KEY] = context.ActionContext.HttpContext.GetDevice().Preferred;
         }
 
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)

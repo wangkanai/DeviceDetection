@@ -55,12 +55,12 @@ namespace Wangkanai.Responsive.Test.Core
         }
 
         [Fact]
-        public void SetDevice_InvalidContext_ReturnsNull()
+        public void SetDevice_InvalidContext_ReturnsNotNull()
         {
             var context = new DefaultHttpContext();
 
-            // If the device is not found it just returns NULL. May be we can throw some exception here.
-            Assert.Null(context.GetDevice());
+            Assert.NotNull(context.GetDevice());
+            Assert.Equal("Desktop", context.GetDevice().Resolver);
         }
     }
 }

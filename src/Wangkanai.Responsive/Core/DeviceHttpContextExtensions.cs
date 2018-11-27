@@ -2,6 +2,7 @@
 // The Apache v2. See License.txt in the project root for license information.
 
 using System;
+using Wangkanai.Detection;
 using Wangkanai.Responsive;
 
 namespace Microsoft.AspNetCore.Http
@@ -25,7 +26,7 @@ namespace Microsoft.AspNetCore.Http
             if (context.Items.TryGetValue(ResponsiveContextKey, out responsiveContext))
                 return responsiveContext as UserPerference;
 
-            return null;
+            return new UserPerference(DeviceType.Desktop, DeviceType.Desktop);
         }
     }
 }
