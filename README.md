@@ -1,11 +1,11 @@
-# This repo is now marked at Acheived and merged in ![Wangkanai.Detection](https://github.com/wangkanai/Detection)
+# This repo is now marked at Acheived and merged in [Wangkanai.Detection](https://github.com/wangkanai/Detection)
 
 # ASP.NET Core Responsive
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cbx1xvcln7xaccs5?svg=true)](https://ci.appveyor.com/project/wangkanai/responsive) 
 [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Wangkanai.Responsive.svg?maxAge=2592000)](https://www.nuget.org/packages/Wangkanai.Responsive/)
 
-![ASP.NET Core Responsive](https://raw.githubusercontent.com/wangkanai/Responsive/dev/asset/asp.net-core-responsive.svg?sanitize=true)
+[ASP.NET Core Responsive](https://raw.githubusercontent.com/wangkanai/Responsive/dev/asset/asp.net-core-responsive.svg?sanitize=true)
 
 ASP.NET Core Responsive middleware for routing base upon request client device detection to specific view.
 Being to target difference client devices with seperation of concern is crucial, due to you can mininize what is sent to the client directly from the service to only what is needed and nothing more. This increase performance and lower bandwidth usage.
