@@ -1,3 +1,5 @@
+# This repo is now marked at Acheived and merged in ![Wangkanai.Detection](https://github.com/wangkanai/Detection)
+
 # ASP.NET Core Responsive
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cbx1xvcln7xaccs5?svg=true)](https://ci.appveyor.com/project/wangkanai/responsive) 
